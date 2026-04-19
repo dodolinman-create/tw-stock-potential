@@ -43,6 +43,7 @@ if not data_store:
 last_updated = data_store.get('last_updated', '未知')
 results = data_store.get('results', [])
 symbol_list = [r['symbol'] for r in results]
+name_map    = {r['symbol']: r.get('name', '') for r in results}
 
 # ==========================================
 # 標題列
@@ -135,7 +136,10 @@ for i, sym in enumerate(symbol_list):
             template='plotly_white',
             paper_bgcolor='white',
             plot_bgcolor='white',
-            title=dict(text=f"<b>{sym}</b>", font=dict(color='black', size=20)),
+            title=dict(
+                text=f"<b>{sym}</b>  {name_map.get(sym, '')}",
+                font=dict(color='black', size=18)
+            ),
             font=dict(color='black'),
             showlegend=False,
             dragmode=False,

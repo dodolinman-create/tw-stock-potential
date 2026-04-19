@@ -37,7 +37,7 @@ def get_recent_trading_dates(n=5):
 # Step 2：爬上市（TWSE）三大法人
 # ==========================================
 def fetch_twse_institution(date: datetime):
-    """回傳 dict: {股票代號: {'foreign': int, 'trust': int}}"""
+    """回傳 dict: {股票代號: {'foreign': int, 'trust': int, 'name': str}}"""
     date_str = date.strftime('%Y%m%d')
     url = f"https://www.twse.com.tw/fund/T86?response=json&date={date_str}&selectType=ALLBUT0999"
     try:
@@ -48,12 +48,12 @@ def fetch_twse_institution(date: datetime):
         result = {}
         for row in data.get('data', []):
             code = row[0].strip()
-            if not code.isdigit():
+            if not code.isdigit() or code.startswith('0'):
                 continue
-            # 欄位：外陸資買賣超(index 4)、投信買賣超(index 10)
+            name    = row[1].strip()
             foreign = int(row[4].replace(',', '').replace('+', '') or 0)
             trust   = int(row[10].replace(',', '').replace('+', '') or 0)
-            result[code] = {'foreign': foreign, 'trust': trust}
+            result[code] = {'foreign': foreign, 'trust': trust, 'name': name}
         return result
     except Exception as e:
         print(f"   ⚠️ TWSE {date_str} 失敗：{e}")
@@ -64,7 +64,7 @@ def fetch_twse_institution(date: datetime):
 # Step 3：爬上櫃（TPEX）三大法人
 # ==========================================
 def fetch_tpex_institution(date: datetime):
-    """回傳 dict: {股票代號: {'foreign': int, 'trust': int}}"""
+    """回傳 dict: {股票代號: {'foreign': int, 'trust': int, 'name': str}}"""
     # TPEX 使用民國年
     roc_year = date.year - 1911
     date_str = f"{roc_year}/{date.month:02d}/{date.day:02d}"
@@ -81,8 +81,9 @@ def fetch_tpex_institution(date: datetime):
         result = {}
         for row in tables[0].get('data', []):
             code = row[0].strip()
-            if not code.isdigit():
+            if not code.isdigit() or code.startswith('0'):
                 continue
+            name = row[1].strip()
             # 欄位結構（共 24 欄）：
             # 0:代號 1:名稱
             # 2-4: 外資  買/賣/超
@@ -100,7 +101,7 @@ def fetch_tpex_institution(date: datetime):
                     return 0
             foreign = parse(row[4])   # 外資買賣超
             trust   = parse(row[10])  # 投信買賣超
-            result[code] = {'foreign': foreign, 'trust': trust}
+            result[code] = {'foreign': foreign, 'trust': trust, 'name': name}
         return result
     except Exception as e:
         print(f"   ⚠️ TPEX {date_str} 失敗：{e}")
@@ -114,7 +115,7 @@ def get_institution_buyers(days=INSTITUTION_DAYS):
     print(f"📡 抓取近 {days} 個交易日法人買超資料...")
     dates = get_recent_trading_dates(days)
 
-    # {code: {foreign_sum, trust_sum}}
+    # {code: {foreign_sum, trust_sum, name}}
     accum = {}
 
     for d in dates:
@@ -128,14 +129,17 @@ def get_institution_buyers(days=INSTITUTION_DAYS):
         print(f"→ {len(combined)} 檔")
         for code, vals in combined.items():
             if code not in accum:
-                accum[code] = {'foreign': 0, 'trust': 0}
+                accum[code] = {'foreign': 0, 'trust': 0, 'name': vals.get('name', '')}
             accum[code]['foreign'] += vals['foreign']
             accum[code]['trust']   += vals['trust']
+            if not accum[code]['name']:
+                accum[code]['name'] = vals.get('name', '')
         time.sleep(1)
 
-    # 篩選：外資或投信任一累計買超 > 0
+    # 篩選：外資或投信任一累計買超 > 0，回傳 {code: name}
     buyers = {
-        code for code, v in accum.items()
+        code: v['name']
+        for code, v in accum.items()
         if v['foreign'] > 0 or v['trust'] > 0
     }
     print(f"✅ 外資或投信近 {days} 日有淨買超：{len(buyers)} 檔")
@@ -248,9 +252,13 @@ def main():
         print("❌ 無法取得法人資料，程式終止")
         return
 
+    # institution_set 現在是 {code: name}
+    name_map = institution_set
+    codes = list(name_map.keys())
+
     # 轉 yfinance 代號（上市 .TW、上櫃 .TWO 都試）
-    all_tickers = [f"{c}.TW" for c in institution_set] + \
-                  [f"{c}.TWO" for c in institution_set]
+    all_tickers = [f"{c}.TW" for c in codes] + \
+                  [f"{c}.TWO" for c in codes]
 
     print(f"\n📦 下載 {len(all_tickers)} 個代號的技術資料...")
     end_date   = datetime.now()
@@ -270,8 +278,10 @@ def main():
             if passes_technical_filter(df):
                 latest = df.iloc[-1]
                 ma20 = float(df['Close'].astype(float).rolling(20).mean().iloc[-1])
+                code = sym.replace('.TW', '').replace('.TWO', '')
                 passed.append({
                     'symbol': sym,
+                    'name':   name_map.get(code, ''),
                     'close':  round(float(latest['Close']), 2),
                     'ma20':   round(ma20, 2),
                     'volume': int(float(latest['Volume']) // 1000),
