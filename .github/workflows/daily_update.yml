@@ -1,0 +1,34 @@
+name: 每日自動更新篩選結果
+
+on:
+  schedule:
+    # 台灣時間 18:30（UTC+8），換算 UTC 10:30
+    - cron: '30 10 * * 1-5'
+  workflow_dispatch:  # 允許手動觸發
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 程式碼
+        uses: actions/checkout@v4
+
+      - name: 設定 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安裝套件
+        run: pip install yfinance pandas requests lxml html5lib
+
+      - name: 執行篩選
+        run: python update_data.py
+
+      - name: 提交更新結果
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add screen_results.json
+          git diff --staged --quiet || git commit -m "Auto-update: $(TZ='Asia/Taipei' date '+%Y-%m-%d %H:%M')"
+          git push
