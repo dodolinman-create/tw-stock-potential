@@ -14,6 +14,7 @@ VOLUME_RATIO = 1.2          # 近 3 日均量 / 20 日均量
 NEAR_HIGH_RATIO = 0.90      # 收盤 >= 20 日最高 × 90%
 MAX_SINGLE_DAY_RISE = 0.15  # 排除近 20 日最大單日漲幅 > 15%
 INSTITUTION_DAYS = 5        # 法人買超累計天數
+MA10_MA20_GAP_RATIO = 0.03  # MA10 與 MA20 糾結門檻（3%）
 BATCH_SIZE = 50
 
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
@@ -157,15 +158,17 @@ def passes_technical_filter(df):
     volume = df['Volume'].astype(float)
 
     ma5  = close.rolling(5).mean()
+    ma10 = close.rolling(10).mean()
     ma20 = close.rolling(20).mean()
     ma60 = close.rolling(60).mean()
 
     latest_close = float(close.iloc[-1])
     latest_ma5   = float(ma5.iloc[-1])
+    latest_ma10  = float(ma10.iloc[-1])
     latest_ma20  = float(ma20.iloc[-1])
     latest_ma60_vals = ma60.dropna()
 
-    if pd.isna(latest_ma5) or pd.isna(latest_ma20):
+    if pd.isna(latest_ma5) or pd.isna(latest_ma10) or pd.isna(latest_ma20):
         return False
 
     # 1. 股價門檻
@@ -177,14 +180,20 @@ def passes_technical_filter(df):
     if avg_vol_20 / 1000 < MIN_AVG_VOLUME:
         return False
 
-    # 3. 均線多頭排列
-    if not (latest_close > latest_ma20 and latest_ma5 > latest_ma20):
+    # 3. MA10 與 MA20 糾結（差距 ≤ 3%），且收盤在 MA60 之上
+    if abs(latest_ma10 - latest_ma20) / latest_ma20 > MA10_MA20_GAP_RATIO:
+        return False
+    if len(latest_ma60_vals) >= 1 and latest_close < float(latest_ma60_vals.iloc[-1]):
         return False
 
-    # 4. MA60 向上
-    if len(latest_ma60_vals) < 10:
+    # 4. MA60 穩定向上（四點多段確認）
+    if len(latest_ma60_vals) < 21:
         return False
-    if float(latest_ma60_vals.iloc[-1]) <= float(latest_ma60_vals.iloc[-10]):
+    ma60_now = float(latest_ma60_vals.iloc[-1])
+    ma60_5   = float(latest_ma60_vals.iloc[-6])
+    ma60_10  = float(latest_ma60_vals.iloc[-11])
+    ma60_20  = float(latest_ma60_vals.iloc[-21])
+    if not (ma60_now > ma60_5 > ma60_10 > ma60_20):
         return False
 
     # 5. 量能活化
