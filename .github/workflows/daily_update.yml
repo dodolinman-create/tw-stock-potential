@@ -6,6 +6,9 @@ on:
     - cron: '30 10 * * 1-5'
   workflow_dispatch:  # 允許手動觸發
 
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
