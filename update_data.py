@@ -270,7 +270,7 @@ def main():
                   [f"{c}.TWO" for c in codes]
 
     print(f"\n📦 下載 {len(all_tickers)} 個代號的技術資料...")
-    end_date   = datetime.now()
+    end_date   = datetime.now() + timedelta(days=1)
     start_date = end_date - timedelta(days=200)
 
     data_dict = download_batch(
