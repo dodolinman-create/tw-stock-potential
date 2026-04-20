@@ -65,8 +65,8 @@ if not symbol_list:
 # ==========================================
 @st.cache_data(ttl=3600)
 def fetch_charts(symbols):
-    end   = datetime.now()
-    start = end - timedelta(days=270)
+    end   = datetime.now() + timedelta(days=1)
+    start = end - timedelta(days=271)
     data  = yf.download(
         symbols,
         start=start.strftime('%Y-%m-%d'),
