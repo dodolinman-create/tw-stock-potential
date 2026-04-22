@@ -26,7 +26,7 @@ st.markdown("""
 # ==========================================
 # 載入資料
 # ==========================================
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=300)
 def load_results():
     try:
         with open('screen_results.json', 'r', encoding='utf-8') as f:
@@ -63,7 +63,7 @@ if not symbol_list:
 # ==========================================
 # 批次下載 K 線
 # ==========================================
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=300)
 def fetch_charts(symbols):
     end   = datetime.now() + timedelta(days=1)
     start = end - timedelta(days=271)
