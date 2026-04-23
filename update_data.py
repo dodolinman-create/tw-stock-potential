@@ -195,12 +195,7 @@ def passes_technical_filter(df):
     if not (ma60_now > ma60_5 > ma60_10 > ma60_20):
         return None
 
-    # 5. 量能活化
-    recent_vol_3 = float(volume.iloc[-3:].mean())
-    if recent_vol_3 < avg_vol_20 * VOLUME_RATIO:
-        return None
-
-    # 6. 接近 20 日高點
+    # 5. 接近 20 日高點
     high_20 = float(df['High'].astype(float).iloc[-20:].max())
     if latest_close < high_20 * NEAR_HIGH_RATIO:
         return None

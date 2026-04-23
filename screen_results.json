@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-23 20:36:45",
-  "total": 75,
+  "last_updated": "2026-04-23 21:17:20",
+  "total": 122,
   "results": [
     {
       "symbol": "1210.TW",
@@ -10,6 +10,39 @@
       "volume": 3507,
       "date": "2026-04-23",
       "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "1301.TW",
+      "name": "台塑",
+      "close": 51.0,
+      "ma20": 49.45,
+      "volume": 28838,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": true
+    },
+    {
+      "symbol": "1303.TW",
+      "name": "南亞",
+      "close": 85.2,
+      "ma20": 82.93,
+      "volume": 92185,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "1560.TW",
+      "name": "中砂",
+      "close": 521.0,
+      "ma20": 494.88,
+      "volume": 3186,
+      "date": "2026-04-23",
+      "pattern": "B",
       "foreign_buy": true,
       "trust_buy": false
     },
@@ -41,6 +74,17 @@
       "close": 26.7,
       "ma20": 26.79,
       "volume": 5917,
+      "date": "2026-04-23",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "2010.TW",
+      "name": "春源",
+      "close": 24.6,
+      "ma20": 25.1,
+      "volume": 2152,
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
@@ -91,6 +135,17 @@
       "trust_buy": false
     },
     {
+      "symbol": "2243.TW",
+      "name": "宏旭-KY",
+      "close": 24.0,
+      "ma20": 22.21,
+      "volume": 1475,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": true
+    },
+    {
       "symbol": "2303.TW",
       "name": "聯電",
       "close": 73.6,
@@ -102,6 +157,17 @@
       "trust_buy": true
     },
     {
+      "symbol": "2308.TW",
+      "name": "台達電",
+      "close": 1980.0,
+      "ma20": 1688.75,
+      "volume": 17000,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": true
+    },
+    {
       "symbol": "2345.TW",
       "name": "智邦",
       "close": 2080.0,
@@ -109,6 +175,17 @@
       "volume": 6542,
       "date": "2026-04-23",
       "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": true
+    },
+    {
+      "symbol": "2347.TW",
+      "name": "聯強",
+      "close": 82.3,
+      "ma20": 80.82,
+      "volume": 6650,
+      "date": "2026-04-23",
+      "pattern": "A",
       "foreign_buy": false,
       "trust_buy": true
     },
@@ -135,6 +212,39 @@
       "trust_buy": true
     },
     {
+      "symbol": "2368.TW",
+      "name": "金像電",
+      "close": 1265.0,
+      "ma20": 1057.15,
+      "volume": 8392,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": true
+    },
+    {
+      "symbol": "2382.TW",
+      "name": "廣達",
+      "close": 322.0,
+      "ma20": 307.23,
+      "volume": 27306,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "2383.TW",
+      "name": "台光電",
+      "close": 4100.0,
+      "ma20": 3338.25,
+      "volume": 4562,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": true
+    },
+    {
       "symbol": "2385.TW",
       "name": "群光",
       "close": 126.0,
@@ -146,6 +256,50 @@
       "trust_buy": true
     },
     {
+      "symbol": "2387.TW",
+      "name": "精元",
+      "close": 41.4,
+      "ma20": 40.23,
+      "volume": 1227,
+      "date": "2026-04-23",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "2393.TW",
+      "name": "億光",
+      "close": 72.4,
+      "ma20": 70.51,
+      "volume": 3419,
+      "date": "2026-04-23",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "2395.TW",
+      "name": "研華",
+      "close": 356.5,
+      "ma20": 343.27,
+      "volume": 2671,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "2412.TW",
+      "name": "中華電",
+      "close": 136.0,
+      "ma20": 135.12,
+      "volume": 5425,
+      "date": "2026-04-23",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
       "symbol": "2436.TW",
       "name": "偉詮電",
       "close": 76.5,
@@ -154,6 +308,17 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
+      "trust_buy": true
+    },
+    {
+      "symbol": "2455.TW",
+      "name": "全新",
+      "close": 346.0,
+      "ma20": 292.3,
+      "volume": 4859,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": true,
       "trust_buy": true
     },
     {
@@ -168,6 +333,50 @@
       "trust_buy": false
     },
     {
+      "symbol": "2486.TW",
+      "name": "一詮",
+      "close": 222.0,
+      "ma20": 173.35,
+      "volume": 3348,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "2548.TW",
+      "name": "華固",
+      "close": 131.0,
+      "ma20": 126.17,
+      "volume": 1254,
+      "date": "2026-04-23",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": true
+    },
+    {
+      "symbol": "2603.TW",
+      "name": "長榮",
+      "close": 201.0,
+      "ma20": 201.78,
+      "volume": 13824,
+      "date": "2026-04-23",
+      "pattern": "A",
+      "foreign_buy": false,
+      "trust_buy": true
+    },
+    {
+      "symbol": "2637.TW",
+      "name": "慧洋-KY",
+      "close": 73.2,
+      "ma20": 70.95,
+      "volume": 2799,
+      "date": "2026-04-23",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": true
+    },
+    {
       "symbol": "2645.TW",
       "name": "長榮航太",
       "close": 165.5,
@@ -177,6 +386,28 @@
       "pattern": "A",
       "foreign_buy": true,
       "trust_buy": false
+    },
+    {
+      "symbol": "2851.TW",
+      "name": "中再保",
+      "close": 30.15,
+      "ma20": 30.69,
+      "volume": 1823,
+      "date": "2026-04-23",
+      "pattern": "A",
+      "foreign_buy": false,
+      "trust_buy": true
+    },
+    {
+      "symbol": "2855.TW",
+      "name": "統一證",
+      "close": 34.0,
+      "ma20": 32.49,
+      "volume": 9871,
+      "date": "2026-04-23",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": true
     },
     {
       "symbol": "2880.TW",
@@ -190,11 +421,44 @@
       "trust_buy": false
     },
     {
+      "symbol": "2883.TW",
+      "name": "凱基金",
+      "close": 20.2,
+      "ma20": 20.5,
+      "volume": 59574,
+      "date": "2026-04-23",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "2885.TW",
+      "name": "元大金",
+      "close": 50.2,
+      "ma20": 47.97,
+      "volume": 30553,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": true
+    },
+    {
       "symbol": "2890.TW",
       "name": "永豐金",
       "close": 31.55,
       "ma20": 32.15,
       "volume": 32430,
+      "date": "2026-04-23",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "2891.TW",
+      "name": "中信金",
+      "close": 52.7,
+      "ma20": 53.46,
+      "volume": 51642,
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
@@ -234,6 +498,17 @@
       "trust_buy": true
     },
     {
+      "symbol": "3023.TW",
+      "name": "信邦",
+      "close": 278.0,
+      "ma20": 268.65,
+      "volume": 2716,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
       "symbol": "3033.TW",
       "name": "威健",
       "close": 35.0,
@@ -241,6 +516,28 @@
       "volume": 6849,
       "date": "2026-04-23",
       "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "3034.TW",
+      "name": "聯詠",
+      "close": 406.0,
+      "ma20": 398.8,
+      "volume": 9605,
+      "date": "2026-04-23",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "3037.TW",
+      "name": "欣興",
+      "close": 728.0,
+      "ma20": 593.33,
+      "volume": 8192,
+      "date": "2026-04-23",
+      "pattern": "B",
       "foreign_buy": true,
       "trust_buy": false
     },
@@ -333,6 +630,17 @@
       "trust_buy": true
     },
     {
+      "symbol": "3293.TWO",
+      "name": "",
+      "close": 761.0,
+      "ma20": 768.25,
+      "volume": 2430,
+      "date": "2026-04-23",
+      "pattern": "A",
+      "foreign_buy": false,
+      "trust_buy": false
+    },
+    {
       "symbol": "3317.TWO",
       "name": "",
       "close": 51.4,
@@ -366,6 +674,17 @@
       "trust_buy": false
     },
     {
+      "symbol": "3413.TW",
+      "name": "京鼎",
+      "close": 315.5,
+      "ma20": 311.52,
+      "volume": 3373,
+      "date": "2026-04-23",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
       "symbol": "3430.TWO",
       "name": "",
       "close": 116.0,
@@ -375,6 +694,17 @@
       "pattern": "B",
       "foreign_buy": false,
       "trust_buy": false
+    },
+    {
+      "symbol": "3443.TW",
+      "name": "創意",
+      "close": 3910.0,
+      "ma20": 2860.75,
+      "volume": 1770,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": true
     },
     {
       "symbol": "3490.TWO",
@@ -388,6 +718,50 @@
       "trust_buy": false
     },
     {
+      "symbol": "3533.TW",
+      "name": "嘉澤",
+      "close": 2460.0,
+      "ma20": 2309.0,
+      "volume": 2806,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": true
+    },
+    {
+      "symbol": "3583.TW",
+      "name": "辛耘",
+      "close": 893.0,
+      "ma20": 628.5,
+      "volume": 3080,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": true
+    },
+    {
+      "symbol": "3588.TW",
+      "name": "通嘉",
+      "close": 67.8,
+      "ma20": 53.03,
+      "volume": 9713,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "3653.TW",
+      "name": "健策",
+      "close": 5310.0,
+      "ma20": 4283.0,
+      "volume": 1474,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": true
+    },
+    {
       "symbol": "3665.TW",
       "name": "貿聯-KY",
       "close": 2755.0,
@@ -397,6 +771,28 @@
       "pattern": "B",
       "foreign_buy": true,
       "trust_buy": true
+    },
+    {
+      "symbol": "3702.TW",
+      "name": "大聯大",
+      "close": 96.2,
+      "ma20": 94.57,
+      "volume": 20818,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "3704.TW",
+      "name": "合勤控",
+      "close": 35.75,
+      "ma20": 34.94,
+      "volume": 4379,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": false
     },
     {
       "symbol": "3708.TW",
@@ -421,11 +817,44 @@
       "trust_buy": false
     },
     {
+      "symbol": "3711.TW",
+      "name": "日月光投控",
+      "close": 464.5,
+      "ma20": 401.6,
+      "volume": 25950,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": true
+    },
+    {
       "symbol": "4541.TWO",
       "name": "",
       "close": 47.65,
       "ma20": 44.76,
       "volume": 1734,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false
+    },
+    {
+      "symbol": "4576.TW",
+      "name": "大銀微系統",
+      "close": 190.0,
+      "ma20": 164.12,
+      "volume": 2136,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "4577.TWO",
+      "name": "",
+      "close": 175.0,
+      "ma20": 127.0,
+      "volume": 1794,
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
@@ -439,7 +868,7 @@
       "volume": 11637,
       "date": "2026-04-23",
       "pattern": "B",
-      "foreign_buy": false,
+      "foreign_buy": true,
       "trust_buy": true
     },
     {
@@ -465,6 +894,17 @@
       "trust_buy": false
     },
     {
+      "symbol": "4741.TWO",
+      "name": "",
+      "close": 61.5,
+      "ma20": 46.95,
+      "volume": 5157,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false
+    },
+    {
       "symbol": "4904.TW",
       "name": "遠傳",
       "close": 95.9,
@@ -487,6 +927,17 @@
       "trust_buy": true
     },
     {
+      "symbol": "4927.TW",
+      "name": "泰鼎-KY",
+      "close": 54.3,
+      "ma20": 46.08,
+      "volume": 61880,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
       "symbol": "4938.TW",
       "name": "和碩",
       "close": 84.0,
@@ -494,6 +945,17 @@
       "volume": 26238,
       "date": "2026-04-23",
       "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": true
+    },
+    {
+      "symbol": "4949.TW",
+      "name": "有成精密",
+      "close": 88.8,
+      "ma20": 78.76,
+      "volume": 1726,
+      "date": "2026-04-23",
+      "pattern": "B",
       "foreign_buy": true,
       "trust_buy": true
     },
@@ -509,17 +971,6 @@
       "trust_buy": true
     },
     {
-      "symbol": "4961.TW",
-      "name": "天鈺",
-      "close": 162.0,
-      "ma20": 152.25,
-      "volume": 6548,
-      "date": "2026-04-23",
-      "pattern": "A",
-      "foreign_buy": true,
-      "trust_buy": false
-    },
-    {
       "symbol": "4967.TW",
       "name": "十銓",
       "close": 250.0,
@@ -527,6 +978,17 @@
       "volume": 31971,
       "date": "2026-04-23",
       "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "5434.TW",
+      "name": "崇越",
+      "close": 419.5,
+      "ma20": 373.55,
+      "volume": 1298,
+      "date": "2026-04-23",
+      "pattern": "B",
       "foreign_buy": true,
       "trust_buy": false
     },
@@ -591,6 +1053,17 @@
       "close": 88.6,
       "ma20": 61.07,
       "volume": 2539,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false
+    },
+    {
+      "symbol": "6217.TWO",
+      "name": "",
+      "close": 282.0,
+      "ma20": 218.4,
+      "volume": 2849,
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
@@ -692,7 +1165,7 @@
       "volume": 27351,
       "date": "2026-04-23",
       "pattern": "B",
-      "foreign_buy": false,
+      "foreign_buy": true,
       "trust_buy": true
     },
     {
@@ -729,17 +1202,6 @@
       "trust_buy": false
     },
     {
-      "symbol": "6789.TW",
-      "name": "采鈺",
-      "close": 515.0,
-      "ma20": 380.4,
-      "volume": 26038,
-      "date": "2026-04-23",
-      "pattern": "B",
-      "foreign_buy": false,
-      "trust_buy": true
-    },
-    {
       "symbol": "6805.TW",
       "name": "富世達",
       "close": 1910.0,
@@ -760,6 +1222,28 @@
       "pattern": "B",
       "foreign_buy": true,
       "trust_buy": true
+    },
+    {
+      "symbol": "6903.TWO",
+      "name": "",
+      "close": 380.0,
+      "ma20": 346.07,
+      "volume": 1045,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false
+    },
+    {
+      "symbol": "7610.TW",
+      "name": "聯友金屬-創",
+      "close": 638.0,
+      "ma20": 502.4,
+      "volume": 382,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": false
     },
     {
       "symbol": "7769.TW",
@@ -784,22 +1268,33 @@
       "trust_buy": false
     },
     {
-      "symbol": "8070.TW",
-      "name": "長華*",
-      "close": 47.2,
-      "ma20": 46.15,
-      "volume": 5725,
+      "symbol": "8021.TW",
+      "name": "尖點",
+      "close": 471.5,
+      "ma20": 323.05,
+      "volume": 6062,
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
       "trust_buy": false
     },
     {
-      "symbol": "8112.TW",
-      "name": "至上",
-      "close": 83.8,
-      "ma20": 81.66,
-      "volume": 31612,
+      "symbol": "8046.TW",
+      "name": "南電",
+      "close": 795.0,
+      "ma20": 654.8,
+      "volume": 30282,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": true
+    },
+    {
+      "symbol": "8070.TW",
+      "name": "長華*",
+      "close": 47.2,
+      "ma20": 46.15,
+      "volume": 5725,
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
@@ -814,7 +1309,7 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": false
     },
     {
       "symbol": "8240.TWO",
@@ -826,6 +1321,28 @@
       "pattern": "B",
       "foreign_buy": false,
       "trust_buy": false
+    },
+    {
+      "symbol": "8926.TW",
+      "name": "台汽電",
+      "close": 45.4,
+      "ma20": 44.47,
+      "volume": 1551,
+      "date": "2026-04-23",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": false
+    },
+    {
+      "symbol": "8996.TW",
+      "name": "高力",
+      "close": 1210.0,
+      "ma20": 1018.8,
+      "volume": 1440,
+      "date": "2026-04-23",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": true
     }
   ]
 }
