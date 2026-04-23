@@ -3,6 +3,7 @@ import pandas as pd
 import yfinance as yf
 import json
 import time
+from io import StringIO
 from datetime import datetime, timedelta
 
 # ==========================================
@@ -18,6 +19,37 @@ MA10_MA20_GAP_RATIO = 0.03  # MA10 與 MA20 糾結門檻（3%）
 BATCH_SIZE = 50
 
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+
+
+# ==========================================
+# Step 0：抓取產業別分類
+# ==========================================
+def fetch_sector_map():
+    """從 TWSE/TPEX ISIN 頁面抓取產業別，回傳 {股票代號: 產業別}"""
+    sector_map = {}
+    for mode in ['2', '4']:  # 2=上市普通股, 4=上櫃普通股
+        url = f'https://isin.twse.com.tw/isin/C_public.jsp?strMode={mode}'
+        try:
+            resp = requests.get(url, headers=HEADERS, timeout=30, verify=False)
+            resp.encoding = 'big5'
+            tables = pd.read_html(StringIO(resp.text), header=0)
+            if not tables:
+                continue
+            df = tables[0]
+            for _, row in df.iterrows():
+                first = str(row.iloc[0])
+                if '　' not in first:  # 全形空格分隔代號與名稱
+                    continue
+                code = first.split('　')[0].strip()
+                if not code.isdigit() or len(code) < 4:
+                    continue
+                sector = str(row.iloc[4]).strip() if len(row) > 4 else ''
+                if sector and sector.lower() != 'nan':
+                    sector_map[code] = sector
+        except Exception as e:
+            print(f'   ⚠️ 產業別抓取失敗 (mode={mode}): {e}')
+    print(f'✅ 產業別：共建立 {len(sector_map)} 檔對照')
+    return sector_map
 
 
 # ==========================================
@@ -255,6 +287,10 @@ def main():
     print(f"  執行時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 50)
 
+    # Step 0：產業別分類
+    print('🏭 抓取產業別分類...')
+    sector_map = fetch_sector_map()
+
     # Step 1：法人買超清單
     institution_map = get_institution_buyers()
     if not institution_map:
@@ -299,6 +335,7 @@ def main():
                     'pattern':     pattern,
                     'foreign_buy': inst.get('foreign', 0) > 0,
                     'trust_buy':   inst.get('trust', 0) > 0,
+                    'sector':      sector_map.get(code, ''),
                 })
         except Exception:
             continue

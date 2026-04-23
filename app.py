@@ -71,6 +71,20 @@ if not symbol_list:
     st.info("目前沒有符合條件的標的。")
     st.stop()
 
+# 下載 TradingView 名單按鈕
+selected_syms = [sym for sym in symbol_list if st.session_state.get(f'cb_{sym}', False)]
+if selected_syms:
+    tv_content = ','.join(
+        f"{'TWSE' if s.endswith('.TW') else 'TPEX'}:{s.replace('.TW','').replace('.TWO','')}"
+        for s in selected_syms
+    )
+    st.download_button(
+        f'⬇ 下載 TradingView 名單（已選 {len(selected_syms)} 檔）',
+        tv_content,
+        file_name='watchlist.txt',
+        mime='text/plain',
+    )
+
 # ==========================================
 # 批次下載 K 線
 # ==========================================
@@ -112,6 +126,8 @@ for i, sym in enumerate(symbol_list):
             inst_tags += ' 🔵外資'
         if info.get('trust_buy'):
             inst_tags += ' 🟡投信'
+        sector = info.get('sector', '')
+        sector_tag = f'  【{sector}】' if sector else ''
 
         df['MA5']  = df['Close'].rolling(5).mean()
         df['MA20'] = df['Close'].rolling(20).mean()
@@ -156,8 +172,8 @@ for i, sym in enumerate(symbol_list):
             paper_bgcolor='white',
             plot_bgcolor='white',
             title=dict(
-                text=f"<b>{sym}</b>  {info.get('name', '')}  ｜ {pattern_str}{inst_tags}",
-                font=dict(color='black', size=16)
+                text=f"<b>{sym}</b>  {info.get('name', '')}  ｜ {pattern_str}{inst_tags}{sector_tag}",
+                font=dict(color='black', size=15)
             ),
             font=dict(color='black'),
             showlegend=False,
@@ -176,6 +192,7 @@ for i, sym in enumerate(symbol_list):
             cols = st.columns(2)
 
         with cols[i % 2]:
+            st.checkbox('加入名單', key=f'cb_{sym}')
             st.plotly_chart(fig, use_container_width=True, key=f"fig_{sym}",
                             theme=None, config={'staticPlot': True, 'displayModeBar': False})
             st.markdown("<br>", unsafe_allow_html=True)

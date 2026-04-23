@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-23 21:17:20",
+  "last_updated": "2026-04-23 21:37:03",
   "total": 122,
   "results": [
     {
@@ -11,7 +11,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "食品工業"
     },
     {
       "symbol": "1301.TW",
@@ -22,7 +23,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "塑膠工業"
     },
     {
       "symbol": "1303.TW",
@@ -33,7 +35,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "塑膠工業"
     },
     {
       "symbol": "1560.TW",
@@ -44,7 +47,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電機機械"
     },
     {
       "symbol": "1590.TW",
@@ -55,7 +59,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電機機械"
     },
     {
       "symbol": "1721.TW",
@@ -66,7 +71,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "化學工業"
     },
     {
       "symbol": "1809.TW",
@@ -77,7 +83,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "玻璃陶瓷"
     },
     {
       "symbol": "2010.TW",
@@ -88,7 +95,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "鋼鐵工業"
     },
     {
       "symbol": "2049.TW",
@@ -99,7 +107,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電機機械"
     },
     {
       "symbol": "2105.TW",
@@ -110,7 +119,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "橡膠工業"
     },
     {
       "symbol": "2108.TW",
@@ -121,7 +131,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "橡膠工業"
     },
     {
       "symbol": "2231.TW",
@@ -132,7 +143,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "汽車工業"
     },
     {
       "symbol": "2243.TW",
@@ -143,7 +155,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "汽車工業"
     },
     {
       "symbol": "2303.TW",
@@ -154,7 +167,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "半導體業"
     },
     {
       "symbol": "2308.TW",
@@ -165,7 +179,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "2345.TW",
@@ -176,7 +191,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "通信網路業"
     },
     {
       "symbol": "2347.TW",
@@ -187,7 +203,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電子通路業"
     },
     {
       "symbol": "2353.TW",
@@ -198,7 +215,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電腦及週邊設備業"
     },
     {
       "symbol": "2357.TW",
@@ -209,7 +227,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電腦及週邊設備業"
     },
     {
       "symbol": "2368.TW",
@@ -220,7 +239,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "2382.TW",
@@ -231,7 +251,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電腦及週邊設備業"
     },
     {
       "symbol": "2383.TW",
@@ -242,7 +263,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "2385.TW",
@@ -253,7 +275,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "2387.TW",
@@ -264,7 +287,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電腦及週邊設備業"
     },
     {
       "symbol": "2393.TW",
@@ -275,7 +299,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "光電業"
     },
     {
       "symbol": "2395.TW",
@@ -286,7 +311,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電腦及週邊設備業"
     },
     {
       "symbol": "2412.TW",
@@ -297,7 +323,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "通信網路業"
     },
     {
       "symbol": "2436.TW",
@@ -308,7 +335,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "半導體業"
     },
     {
       "symbol": "2455.TW",
@@ -319,7 +347,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "通信網路業"
     },
     {
       "symbol": "2458.TW",
@@ -330,7 +359,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "半導體業"
     },
     {
       "symbol": "2486.TW",
@@ -341,7 +371,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "光電業"
     },
     {
       "symbol": "2548.TW",
@@ -352,7 +383,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "建材營造業"
     },
     {
       "symbol": "2603.TW",
@@ -363,7 +395,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "航運業"
     },
     {
       "symbol": "2637.TW",
@@ -374,7 +407,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "航運業"
     },
     {
       "symbol": "2645.TW",
@@ -385,7 +419,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "航運業"
     },
     {
       "symbol": "2851.TW",
@@ -396,7 +431,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "金融保險業"
     },
     {
       "symbol": "2855.TW",
@@ -407,7 +443,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "金融保險業"
     },
     {
       "symbol": "2880.TW",
@@ -418,7 +455,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "金融保險業"
     },
     {
       "symbol": "2883.TW",
@@ -429,7 +467,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "金融保險業"
     },
     {
       "symbol": "2885.TW",
@@ -440,7 +479,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "金融保險業"
     },
     {
       "symbol": "2890.TW",
@@ -451,7 +491,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "金融保險業"
     },
     {
       "symbol": "2891.TW",
@@ -462,7 +503,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "金融保險業"
     },
     {
       "symbol": "2912.TW",
@@ -473,7 +515,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "貿易百貨業"
     },
     {
       "symbol": "3010.TW",
@@ -484,7 +527,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電子通路業"
     },
     {
       "symbol": "3017.TW",
@@ -495,7 +539,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電腦及週邊設備業"
     },
     {
       "symbol": "3023.TW",
@@ -506,7 +551,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "3033.TW",
@@ -517,7 +563,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電子通路業"
     },
     {
       "symbol": "3034.TW",
@@ -528,7 +575,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "半導體業"
     },
     {
       "symbol": "3037.TW",
@@ -539,7 +587,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "3044.TW",
@@ -550,7 +599,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "3045.TW",
@@ -561,7 +611,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "通信網路業"
     },
     {
       "symbol": "3071.TWO",
@@ -572,7 +623,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "3081.TWO",
@@ -583,7 +635,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "3088.TWO",
@@ -594,7 +647,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "3162.TWO",
@@ -605,7 +659,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "3189.TW",
@@ -616,7 +671,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "半導體業"
     },
     {
       "symbol": "3209.TW",
@@ -627,7 +683,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電子通路業"
     },
     {
       "symbol": "3293.TWO",
@@ -638,7 +695,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "3317.TWO",
@@ -649,7 +707,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "3338.TW",
@@ -660,7 +719,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "3406.TW",
@@ -671,7 +731,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "光電業"
     },
     {
       "symbol": "3413.TW",
@@ -682,7 +743,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "半導體業"
     },
     {
       "symbol": "3430.TWO",
@@ -693,7 +755,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "3443.TW",
@@ -704,7 +767,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "半導體業"
     },
     {
       "symbol": "3490.TWO",
@@ -715,7 +779,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "3533.TW",
@@ -726,7 +791,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "3583.TW",
@@ -737,7 +803,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "半導體業"
     },
     {
       "symbol": "3588.TW",
@@ -748,7 +815,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "半導體業"
     },
     {
       "symbol": "3653.TW",
@@ -759,7 +827,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "3665.TW",
@@ -770,7 +839,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "其他電子業"
     },
     {
       "symbol": "3702.TW",
@@ -781,7 +851,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電子通路業"
     },
     {
       "symbol": "3704.TW",
@@ -792,7 +863,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "通信網路業"
     },
     {
       "symbol": "3708.TW",
@@ -803,7 +875,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "綠能環保"
     },
     {
       "symbol": "3709.TWO",
@@ -814,7 +887,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "3711.TW",
@@ -825,7 +899,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "半導體業"
     },
     {
       "symbol": "4541.TWO",
@@ -836,7 +911,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "4576.TW",
@@ -847,7 +923,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電機機械"
     },
     {
       "symbol": "4577.TWO",
@@ -858,7 +935,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "4720.TW",
@@ -869,7 +947,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "化學工業"
     },
     {
       "symbol": "4721.TWO",
@@ -880,7 +959,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "4739.TW",
@@ -891,7 +971,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "化學工業"
     },
     {
       "symbol": "4741.TWO",
@@ -902,7 +983,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "4904.TW",
@@ -913,7 +995,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "通信網路業"
     },
     {
       "symbol": "4919.TW",
@@ -924,7 +1007,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "半導體業"
     },
     {
       "symbol": "4927.TW",
@@ -935,7 +1019,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "4938.TW",
@@ -946,7 +1031,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電腦及週邊設備業"
     },
     {
       "symbol": "4949.TW",
@@ -957,7 +1043,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "光電業"
     },
     {
       "symbol": "4958.TW",
@@ -968,7 +1055,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "4967.TW",
@@ -979,7 +1067,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "半導體業"
     },
     {
       "symbol": "5434.TW",
@@ -990,7 +1079,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電子通路業"
     },
     {
       "symbol": "5471.TW",
@@ -1001,7 +1091,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "半導體業"
     },
     {
       "symbol": "5864.TWO",
@@ -1012,7 +1103,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "5871.TW",
@@ -1023,7 +1115,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "其他業"
     },
     {
       "symbol": "6197.TW",
@@ -1034,7 +1127,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "6207.TWO",
@@ -1045,7 +1139,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "6208.TWO",
@@ -1056,7 +1151,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "6217.TWO",
@@ -1067,7 +1163,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "6234.TWO",
@@ -1078,7 +1175,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "6245.TWO",
@@ -1089,7 +1187,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "6261.TWO",
@@ -1100,7 +1199,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "6269.TW",
@@ -1111,7 +1211,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "6271.TW",
@@ -1122,7 +1223,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "半導體業"
     },
     {
       "symbol": "6290.TWO",
@@ -1133,7 +1235,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "6415.TW",
@@ -1144,7 +1247,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "半導體業"
     },
     {
       "symbol": "6488.TWO",
@@ -1155,7 +1259,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "6531.TW",
@@ -1166,7 +1271,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "半導體業"
     },
     {
       "symbol": "6532.TWO",
@@ -1177,7 +1283,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "6658.TW",
@@ -1188,7 +1295,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "其他電子業"
     },
     {
       "symbol": "6761.TWO",
@@ -1199,7 +1307,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "6805.TW",
@@ -1210,7 +1319,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "6831.TW",
@@ -1221,7 +1331,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電腦及週邊設備業"
     },
     {
       "symbol": "6903.TWO",
@@ -1232,7 +1343,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "7610.TW",
@@ -1243,7 +1355,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "綠能環保"
     },
     {
       "symbol": "7769.TW",
@@ -1254,7 +1367,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "半導體業"
     },
     {
       "symbol": "8016.TW",
@@ -1265,7 +1379,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "半導體業"
     },
     {
       "symbol": "8021.TW",
@@ -1276,7 +1391,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "其他電子業"
     },
     {
       "symbol": "8046.TW",
@@ -1287,7 +1403,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "8070.TW",
@@ -1298,7 +1415,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "電子通路業"
     },
     {
       "symbol": "8215.TW",
@@ -1309,7 +1427,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "光電業"
     },
     {
       "symbol": "8240.TWO",
@@ -1320,7 +1439,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "8926.TW",
@@ -1331,7 +1451,8 @@
       "date": "2026-04-23",
       "pattern": "A",
       "foreign_buy": true,
-      "trust_buy": false
+      "trust_buy": false,
+      "sector": "油電燃氣業"
     },
     {
       "symbol": "8996.TW",
@@ -1342,7 +1463,8 @@
       "date": "2026-04-23",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": true
+      "trust_buy": true,
+      "sector": "電機機械"
     }
   ]
 }
