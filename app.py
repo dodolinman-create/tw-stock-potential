@@ -42,15 +42,26 @@ if not data_store:
 
 last_updated = data_store.get('last_updated', '未知')
 results = data_store.get('results', [])
+
+PATTERN_LABEL = {'A': '型態A（漲後整理）', 'B': '型態B（多頭排列）'}
+
+# 型態篩選器
+pattern_options = ['全部', '型態A（漲後整理）', '型態B（多頭排列）']
+selected_pattern = st.selectbox('型態選擇', pattern_options, label_visibility='collapsed')
+
+pattern_filter_map = {'型態A（漲後整理）': 'A', '型態B（多頭排列）': 'B'}
+if selected_pattern != '全部':
+    results = [r for r in results if r.get('pattern') == pattern_filter_map[selected_pattern]]
+
 symbol_list = [r['symbol'] for r in results]
-name_map    = {r['symbol']: r.get('name', '') for r in results}
+info_map    = {r['symbol']: r for r in results}
 
 # ==========================================
 # 標題列
 # ==========================================
 st.markdown(f"""
     <div style='display:flex; justify-content:space-between; align-items:baseline;
-                border-bottom:2px solid #000; padding-top:20px; padding-bottom:5px; margin-bottom:12px;'>
+                border-bottom:2px solid #000; padding-top:4px; padding-bottom:5px; margin-bottom:12px;'>
         <div style='font-size:2rem; font-weight:900;'>台股潛力股掃描</div>
         <div style='font-size:0.85rem; font-weight:700;'>更新：{last_updated}｜共 {len(symbol_list)} 檔</div>
     </div>
@@ -93,6 +104,14 @@ for i, sym in enumerate(symbol_list):
         df = df.dropna(subset=['Close'])
         if df.empty:
             continue
+
+        info = info_map.get(sym, {})
+        pattern_str = PATTERN_LABEL.get(info.get('pattern', ''), '')
+        inst_tags = ''
+        if info.get('foreign_buy'):
+            inst_tags += ' 🔵外資'
+        if info.get('trust_buy'):
+            inst_tags += ' 🟡投信'
 
         df['MA5']  = df['Close'].rolling(5).mean()
         df['MA20'] = df['Close'].rolling(20).mean()
@@ -137,8 +156,8 @@ for i, sym in enumerate(symbol_list):
             paper_bgcolor='white',
             plot_bgcolor='white',
             title=dict(
-                text=f"<b>{sym}</b>  {name_map.get(sym, '')}",
-                font=dict(color='black', size=18)
+                text=f"<b>{sym}</b>  {info.get('name', '')}  ｜ {pattern_str}{inst_tags}",
+                font=dict(color='black', size=16)
             ),
             font=dict(color='black'),
             showlegend=False,

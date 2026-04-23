@@ -137,9 +137,9 @@ def get_institution_buyers(days=INSTITUTION_DAYS):
                 accum[code]['name'] = vals.get('name', '')
         time.sleep(1)
 
-    # 篩選：外資或投信任一累計買超 > 0，回傳 {code: name}
+    # 篩選：外資或投信任一累計買超 > 0，回傳 {code: {'name', 'foreign', 'trust'}}
     buyers = {
-        code: v['name']
+        code: {'name': v['name'], 'foreign': v['foreign'], 'trust': v['trust']}
         for code, v in accum.items()
         if v['foreign'] > 0 or v['trust'] > 0
     }
@@ -151,8 +151,9 @@ def get_institution_buyers(days=INSTITUTION_DAYS):
 # Step 5：技術面篩選
 # ==========================================
 def passes_technical_filter(df):
+    """回傳型態字串 'A'（漲後整理）或 'B'（多頭排列），不符合回傳 None"""
     if len(df) < 80:
-        return False
+        return None
 
     close  = df['Close'].astype(float)
     volume = df['Volume'].astype(float)
@@ -169,49 +170,53 @@ def passes_technical_filter(df):
     latest_ma60_vals = ma60.dropna()
 
     if pd.isna(latest_ma5) or pd.isna(latest_ma10) or pd.isna(latest_ma20):
-        return False
+        return None
 
     # 1. 股價門檻
     if latest_close < MIN_PRICE:
-        return False
+        return None
 
     # 2. 流動性（張）
     avg_vol_20 = float(volume.iloc[-20:].mean())
     if avg_vol_20 / 1000 < MIN_AVG_VOLUME:
-        return False
+        return None
 
-    # 3. MA10 與 MA20 糾結（差距 ≤ 3%），且收盤在 MA60 之上
-    if abs(latest_ma10 - latest_ma20) / latest_ma20 > MA10_MA20_GAP_RATIO:
-        return False
-    if len(latest_ma60_vals) >= 1 and latest_close < float(latest_ma60_vals.iloc[-1]):
-        return False
+    # 3. 收盤在 MA60 之上
+    if len(latest_ma60_vals) < 1 or latest_close < float(latest_ma60_vals.iloc[-1]):
+        return None
 
     # 4. MA60 穩定向上（四點多段確認）
     if len(latest_ma60_vals) < 21:
-        return False
+        return None
     ma60_now = float(latest_ma60_vals.iloc[-1])
     ma60_5   = float(latest_ma60_vals.iloc[-6])
     ma60_10  = float(latest_ma60_vals.iloc[-11])
     ma60_20  = float(latest_ma60_vals.iloc[-21])
     if not (ma60_now > ma60_5 > ma60_10 > ma60_20):
-        return False
+        return None
 
     # 5. 量能活化
     recent_vol_3 = float(volume.iloc[-3:].mean())
     if recent_vol_3 < avg_vol_20 * VOLUME_RATIO:
-        return False
+        return None
 
     # 6. 接近 20 日高點
     high_20 = float(df['High'].astype(float).iloc[-20:].max())
     if latest_close < high_20 * NEAR_HIGH_RATIO:
-        return False
+        return None
 
     # 7. 排除剛暴漲（追高風險）
     daily_ret = close.iloc[-20:].pct_change().dropna()
     if float(daily_ret.max()) > MAX_SINGLE_DAY_RISE:
-        return False
+        return None
 
-    return True
+    # 8. 型態分類
+    ma10_ma20_gap = abs(latest_ma10 - latest_ma20) / latest_ma20
+    if ma10_ma20_gap <= MA10_MA20_GAP_RATIO:
+        return 'A'  # 漲後整理（均線糾結蓄力）
+    elif latest_ma10 > latest_ma20 and latest_ma20 > ma60_now:
+        return 'B'  # 多頭排列（MA10 > MA20 > MA60）
+    return None
 
 
 # ==========================================
@@ -256,14 +261,13 @@ def main():
     print("=" * 50)
 
     # Step 1：法人買超清單
-    institution_set = get_institution_buyers()
-    if not institution_set:
+    institution_map = get_institution_buyers()
+    if not institution_map:
         print("❌ 無法取得法人資料，程式終止")
         return
 
-    # institution_set 現在是 {code: name}
-    name_map = institution_set
-    codes = list(name_map.keys())
+    # institution_map = {code: {'name': str, 'foreign': int, 'trust': int}}
+    codes = list(institution_map.keys())
 
     # 轉 yfinance 代號（上市 .TW、上櫃 .TWO 都試）
     all_tickers = [f"{c}.TW" for c in codes] + \
@@ -284,17 +288,22 @@ def main():
     passed = []
     for sym, df in data_dict.items():
         try:
-            if passes_technical_filter(df):
+            pattern = passes_technical_filter(df)
+            if pattern:
                 latest = df.iloc[-1]
                 ma20 = float(df['Close'].astype(float).rolling(20).mean().iloc[-1])
                 code = sym.replace('.TW', '').replace('.TWO', '')
+                inst = institution_map.get(code, {})
                 passed.append({
-                    'symbol': sym,
-                    'name':   name_map.get(code, ''),
-                    'close':  round(float(latest['Close']), 2),
-                    'ma20':   round(ma20, 2),
-                    'volume': int(float(latest['Volume']) // 1000),
-                    'date':   df.index[-1].strftime('%Y-%m-%d'),
+                    'symbol':      sym,
+                    'name':        inst.get('name', ''),
+                    'close':       round(float(latest['Close']), 2),
+                    'ma20':        round(ma20, 2),
+                    'volume':      int(float(latest['Volume']) // 1000),
+                    'date':        df.index[-1].strftime('%Y-%m-%d'),
+                    'pattern':     pattern,
+                    'foreign_buy': inst.get('foreign', 0) > 0,
+                    'trust_buy':   inst.get('trust', 0) > 0,
                 })
         except Exception:
             continue
