@@ -81,7 +81,7 @@ if selected_syms:
     st.download_button(
         f'⬇ 下載 TradingView 名單（已選 {len(selected_syms)} 檔）',
         tv_content,
-        file_name='watchlist.txt',
+        file_name=f"{datetime.now().strftime('%Y%m%d')}.txt",
         mime='text/plain',
     )
 
