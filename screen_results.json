@@ -34,21 +34,9 @@
       "volume": 2834,
       "date": "2026-04-24",
       "pattern": "B",
-      "foreign_buy": false,
-      "trust_buy": true,
-      "sector": "電機機械"
-    },
-    {
-      "symbol": "1711.TW",
-      "name": "永光",
-      "close": 59.6,
-      "ma20": 41.82,
-      "volume": 50109,
-      "date": "2026-04-22",
-      "pattern": "B",
       "foreign_buy": true,
       "trust_buy": true,
-      "sector": "化學工業"
+      "sector": "電機機械"
     },
     {
       "symbol": "1721.TW",
@@ -171,18 +159,6 @@
       "sector": "電子通路業"
     },
     {
-      "symbol": "2351.TW",
-      "name": "順德",
-      "close": 166.0,
-      "ma20": 117.24,
-      "volume": 13434,
-      "date": "2026-04-22",
-      "pattern": "B",
-      "foreign_buy": false,
-      "trust_buy": true,
-      "sector": "半導體業"
-    },
-    {
       "symbol": "2353.TW",
       "name": "宏碁",
       "close": 27.65,
@@ -195,18 +171,6 @@
       "sector": "電腦及週邊設備業"
     },
     {
-      "symbol": "2355.TW",
-      "name": "敬鵬",
-      "close": 55.0,
-      "ma20": 51.11,
-      "volume": 32197,
-      "date": "2026-04-22",
-      "pattern": "A",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "sector": "電子零組件業"
-    },
-    {
       "symbol": "2357.TW",
       "name": "華碩",
       "close": 585.0,
@@ -217,18 +181,6 @@
       "foreign_buy": false,
       "trust_buy": true,
       "sector": "電腦及週邊設備業"
-    },
-    {
-      "symbol": "2360.TW",
-      "name": "致茂",
-      "close": 2030.0,
-      "ma20": 1783.25,
-      "volume": 3878,
-      "date": "2026-04-22",
-      "pattern": "B",
-      "foreign_buy": false,
-      "trust_buy": true,
-      "sector": "其他電子業"
     },
     {
       "symbol": "2368.TW",
@@ -363,18 +315,6 @@
       "sector": "半導體業"
     },
     {
-      "symbol": "2451.TW",
-      "name": "創見",
-      "close": 269.0,
-      "ma20": 243.2,
-      "volume": 9507,
-      "date": "2026-04-22",
-      "pattern": "A",
-      "foreign_buy": false,
-      "trust_buy": true,
-      "sector": "半導體業"
-    },
-    {
       "symbol": "2455.TW",
       "name": "全新",
       "close": 346.0,
@@ -433,18 +373,6 @@
       "foreign_buy": true,
       "trust_buy": false,
       "sector": "光電業"
-    },
-    {
-      "symbol": "2495.TW",
-      "name": "普安",
-      "close": 44.4,
-      "ma20": 37.91,
-      "volume": 14106,
-      "date": "2026-04-22",
-      "pattern": "B",
-      "foreign_buy": true,
-      "trust_buy": false,
-      "sector": "電腦及週邊設備業"
     },
     {
       "symbol": "2548.TW",
@@ -531,18 +459,6 @@
       "sector": "金融保險業"
     },
     {
-      "symbol": "2887.TW",
-      "name": "台新新光金",
-      "close": 23.95,
-      "ma20": 24.25,
-      "volume": 63177,
-      "date": "2026-04-22",
-      "pattern": "A",
-      "foreign_buy": true,
-      "trust_buy": false,
-      "sector": "金融保險業"
-    },
-    {
       "symbol": "2890.TW",
       "name": "永豐金",
       "close": 31.95,
@@ -565,18 +481,6 @@
       "foreign_buy": true,
       "trust_buy": false,
       "sector": "貿易百貨業"
-    },
-    {
-      "symbol": "3006.TW",
-      "name": "晶豪科",
-      "close": 167.5,
-      "ma20": 159.85,
-      "volume": 22627,
-      "date": "2026-04-22",
-      "pattern": "A",
-      "foreign_buy": true,
-      "trust_buy": false,
-      "sector": "半導體業"
     },
     {
       "symbol": "3010.TW",
@@ -711,18 +615,6 @@
       "sector": "電機機械"
     },
     {
-      "symbol": "3167.TW",
-      "name": "大量",
-      "close": 680.0,
-      "ma20": 528.55,
-      "volume": 591,
-      "date": "2026-04-22",
-      "pattern": "B",
-      "foreign_buy": true,
-      "trust_buy": false,
-      "sector": "電機機械"
-    },
-    {
       "symbol": "3189.TW",
       "name": "景碩",
       "close": 526.0,
@@ -757,30 +649,6 @@
       "foreign_buy": true,
       "trust_buy": false,
       "sector": "電子零組件業"
-    },
-    {
-      "symbol": "3339.TWO",
-      "name": "",
-      "close": 69.1,
-      "ma20": 49.42,
-      "volume": 2691,
-      "date": "2026-04-22",
-      "pattern": "B",
-      "foreign_buy": false,
-      "trust_buy": false,
-      "sector": ""
-    },
-    {
-      "symbol": "3380.TW",
-      "name": "明泰",
-      "close": 40.0,
-      "ma20": 38.3,
-      "volume": 3677,
-      "date": "2026-04-22",
-      "pattern": "B",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "sector": "通信網路業"
     },
     {
       "symbol": "3406.TW",
@@ -841,42 +709,6 @@
       "foreign_buy": true,
       "trust_buy": true,
       "sector": "其他電子業"
-    },
-    {
-      "symbol": "3680.TWO",
-      "name": "",
-      "close": 495.0,
-      "ma20": 412.52,
-      "volume": 4234,
-      "date": "2026-04-22",
-      "pattern": "B",
-      "foreign_buy": false,
-      "trust_buy": false,
-      "sector": ""
-    },
-    {
-      "symbol": "3693.TWO",
-      "name": "",
-      "close": 707.0,
-      "ma20": 567.58,
-      "volume": 2697,
-      "date": "2026-04-22",
-      "pattern": "B",
-      "foreign_buy": false,
-      "trust_buy": false,
-      "sector": ""
-    },
-    {
-      "symbol": "3701.TW",
-      "name": "大眾控",
-      "close": 78.6,
-      "ma20": 60.61,
-      "volume": 24498,
-      "date": "2026-04-22",
-      "pattern": "B",
-      "foreign_buy": true,
-      "trust_buy": false,
-      "sector": "電腦及週邊設備業"
     },
     {
       "symbol": "3702.TW",
@@ -987,18 +819,6 @@
       "sector": "光電業"
     },
     {
-      "symbol": "4956.TW",
-      "name": "光鋐",
-      "close": 54.3,
-      "ma20": 39.93,
-      "volume": 4110,
-      "date": "2026-04-22",
-      "pattern": "B",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "sector": "光電業"
-    },
-    {
       "symbol": "4958.TW",
       "name": "臻鼎-KY",
       "close": 347.5,
@@ -1011,18 +831,6 @@
       "sector": "電子零組件業"
     },
     {
-      "symbol": "4960.TW",
-      "name": "誠美材",
-      "close": 44.95,
-      "ma20": 27.31,
-      "volume": 11620,
-      "date": "2026-04-22",
-      "pattern": "B",
-      "foreign_buy": true,
-      "trust_buy": false,
-      "sector": "光電業"
-    },
-    {
       "symbol": "4967.TW",
       "name": "十銓",
       "close": 258.5,
@@ -1033,30 +841,6 @@
       "foreign_buy": true,
       "trust_buy": false,
       "sector": "半導體業"
-    },
-    {
-      "symbol": "4977.TW",
-      "name": "眾達-KY",
-      "close": 242.0,
-      "ma20": 201.7,
-      "volume": 9641,
-      "date": "2026-04-22",
-      "pattern": "B",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "sector": "通信網路業"
-    },
-    {
-      "symbol": "4989.TW",
-      "name": "榮科",
-      "close": 116.5,
-      "ma20": 80.8,
-      "volume": 5184,
-      "date": "2026-04-22",
-      "pattern": "B",
-      "foreign_buy": true,
-      "trust_buy": false,
-      "sector": "電子零組件業"
     },
     {
       "symbol": "5434.TW",
@@ -1107,18 +891,6 @@
       "sector": "電子零組件業"
     },
     {
-      "symbol": "6270.TWO",
-      "name": "",
-      "close": 31.25,
-      "ma20": 25.69,
-      "volume": 12787,
-      "date": "2026-04-22",
-      "pattern": "A",
-      "foreign_buy": false,
-      "trust_buy": false,
-      "sector": ""
-    },
-    {
       "symbol": "6271.TW",
       "name": "同欣電",
       "close": 178.0,
@@ -1153,18 +925,6 @@
       "foreign_buy": true,
       "trust_buy": true,
       "sector": "半導體業"
-    },
-    {
-      "symbol": "6509.TWO",
-      "name": "",
-      "close": 44.05,
-      "ma20": 44.84,
-      "volume": 3780,
-      "date": "2026-04-22",
-      "pattern": "A",
-      "foreign_buy": false,
-      "trust_buy": false,
-      "sector": ""
     },
     {
       "symbol": "6531.TW",
@@ -1239,18 +999,6 @@
       "sector": "電腦及週邊設備業"
     },
     {
-      "symbol": "7709.TWO",
-      "name": "",
-      "close": 79.7,
-      "ma20": 71.42,
-      "volume": 799,
-      "date": "2026-04-22",
-      "pattern": "B",
-      "foreign_buy": false,
-      "trust_buy": false,
-      "sector": ""
-    },
-    {
       "symbol": "7769.TW",
       "name": "鴻勁",
       "close": 4730.0,
@@ -1285,30 +1033,6 @@
       "foreign_buy": true,
       "trust_buy": false,
       "sector": "其他電子業"
-    },
-    {
-      "symbol": "8028.TW",
-      "name": "昇陽半導體",
-      "close": 230.0,
-      "ma20": 191.88,
-      "volume": 34488,
-      "date": "2026-04-22",
-      "pattern": "B",
-      "foreign_buy": true,
-      "trust_buy": false,
-      "sector": "半導體業"
-    },
-    {
-      "symbol": "8039.TW",
-      "name": "台虹",
-      "close": 161.0,
-      "ma20": 127.67,
-      "volume": 9656,
-      "date": "2026-04-22",
-      "pattern": "B",
-      "foreign_buy": true,
-      "trust_buy": false,
-      "sector": "電子零組件業"
     },
     {
       "symbol": "8046.TW",
