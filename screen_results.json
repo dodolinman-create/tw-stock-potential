@@ -96,7 +96,7 @@
       "pattern": "A",
       "foreign_buy": true,
       "trust_buy": false,
-      "sector": "橡膠工業"
+      "sector": "汽車工業"
     },
     {
       "symbol": "2108.TW",
@@ -217,6 +217,42 @@
       "foreign_buy": false,
       "trust_buy": true,
       "sector": "電子零組件業"
+    },
+    {
+      "symbol": "2360.TW",
+      "name": "致茂",
+      "close": 2325.0,
+      "ma20": 2050.75,
+      "volume": 3985,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": true,
+      "sector": "其他電子業"
+    },
+    {
+      "symbol": "2368.TW",
+      "name": "金像電",
+      "close": 1450.0,
+      "ma20": 1280.5,
+      "volume": 3989,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": true,
+      "sector": "電子零組件業"
+    },
+    {
+      "symbol": "2369.TW",
+      "name": "菱生",
+      "close": 33.0,
+      "ma20": 31.09,
+      "volume": 19916,
+      "date": "2026-05-07",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": false,
+      "sector": "半導體業"
     },
     {
       "symbol": "2376.TW",
@@ -639,6 +675,18 @@
       "sector": "半導體業"
     },
     {
+      "symbol": "3037.TW",
+      "name": "欣興",
+      "close": 896.0,
+      "ma20": 746.6,
+      "volume": 25433,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": true,
+      "sector": "電子零組件業"
+    },
+    {
       "symbol": "3044.TW",
       "name": "健鼎",
       "close": 489.5,
@@ -670,9 +718,9 @@
       "volume": 26622,
       "date": "2026-05-11",
       "pattern": "B",
-      "foreign_buy": true,
+      "foreign_buy": false,
       "trust_buy": false,
-      "sector": "半導體業"
+      "sector": ""
     },
     {
       "symbol": "3209.TW",
@@ -709,6 +757,78 @@
       "foreign_buy": true,
       "trust_buy": false,
       "sector": "光電業"
+    },
+    {
+      "symbol": "3162.TWO",
+      "name": "",
+      "close": 95.9,
+      "ma20": 74.93,
+      "volume": 20169,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false,
+      "sector": ""
+    },
+    {
+      "symbol": "3228.TWO",
+      "name": "",
+      "close": 257.5,
+      "ma20": 180.12,
+      "volume": 1120,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false,
+      "sector": ""
+    },
+    {
+      "symbol": "3260.TWO",
+      "name": "",
+      "close": 461.5,
+      "ma20": 408.73,
+      "volume": 50224,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false,
+      "sector": ""
+    },
+    {
+      "symbol": "3265.TWO",
+      "name": "",
+      "close": 185.0,
+      "ma20": 172.65,
+      "volume": 3987,
+      "date": "2026-05-07",
+      "pattern": "A",
+      "foreign_buy": false,
+      "trust_buy": false,
+      "sector": ""
+    },
+    {
+      "symbol": "3317.TWO",
+      "name": "",
+      "close": 66.9,
+      "ma20": 55.4,
+      "volume": 11636,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false,
+      "sector": ""
+    },
+    {
+      "symbol": "3390.TWO",
+      "name": "",
+      "close": 28.35,
+      "ma20": 25.48,
+      "volume": 7250,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "3443.TW",
@@ -807,6 +927,18 @@
       "sector": ""
     },
     {
+      "symbol": "3715.TW",
+      "name": "定穎投控",
+      "close": 189.0,
+      "ma20": 185.45,
+      "volume": 18762,
+      "date": "2026-05-07",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": true,
+      "sector": "電子零組件業"
+    },
+    {
       "symbol": "3717.TW",
       "name": "聯嘉投控",
       "close": 23.3,
@@ -819,6 +951,30 @@
       "sector": "汽車工業"
     },
     {
+      "symbol": "4543.TWO",
+      "name": "",
+      "close": 40.55,
+      "ma20": 37.88,
+      "volume": 440,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false,
+      "sector": ""
+    },
+    {
+      "symbol": "4556.TWO",
+      "name": "",
+      "close": 43.35,
+      "ma20": 34.11,
+      "volume": 2472,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false,
+      "sector": ""
+    },
+    {
       "symbol": "4576.TW",
       "name": "大銀微系統",
       "close": 250.5,
@@ -829,6 +985,18 @@
       "foreign_buy": false,
       "trust_buy": true,
       "sector": "電機機械"
+    },
+    {
+      "symbol": "4720.TW",
+      "name": "德淵",
+      "close": 27.9,
+      "ma20": 24.3,
+      "volume": 7339,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": false,
+      "sector": "化學工業"
     },
     {
       "symbol": "4722.TW",
@@ -960,7 +1128,19 @@
       "pattern": "A",
       "foreign_buy": true,
       "trust_buy": false,
-      "sector": "半導體業"
+      "sector": "金融保險業"
+    },
+    {
+      "symbol": "6016.TWO",
+      "name": "",
+      "close": 21.9,
+      "ma20": 18.43,
+      "volume": 15856,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "6005.TW",
@@ -987,6 +1167,18 @@
       "sector": "數位雲端"
     },
     {
+      "symbol": "6147.TWO",
+      "name": "",
+      "close": 192.5,
+      "ma20": 138.47,
+      "volume": 35453,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false,
+      "sector": ""
+    },
+    {
       "symbol": "6166.TW",
       "name": "凌華",
       "close": 92.7,
@@ -999,6 +1191,66 @@
       "sector": "電腦及週邊設備業"
     },
     {
+      "symbol": "6173.TWO",
+      "name": "",
+      "close": 111.0,
+      "ma20": 83.86,
+      "volume": 3482,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false,
+      "sector": ""
+    },
+    {
+      "symbol": "6174.TWO",
+      "name": "",
+      "close": 39.4,
+      "ma20": 30.21,
+      "volume": 6641,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false,
+      "sector": ""
+    },
+    {
+      "symbol": "6175.TWO",
+      "name": "",
+      "close": 69.0,
+      "ma20": 62.25,
+      "volume": 12850,
+      "date": "2026-05-07",
+      "pattern": "A",
+      "foreign_buy": false,
+      "trust_buy": false,
+      "sector": ""
+    },
+    {
+      "symbol": "6182.TWO",
+      "name": "",
+      "close": 55.6,
+      "ma20": 40.88,
+      "volume": 68952,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false,
+      "sector": ""
+    },
+    {
+      "symbol": "6190.TWO",
+      "name": "",
+      "close": 74.7,
+      "ma20": 68.05,
+      "volume": 7597,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": false,
+      "sector": ""
+    },
+    {
       "symbol": "6196.TW",
       "name": "帆宣",
       "close": 425.0,
@@ -1009,6 +1261,18 @@
       "foreign_buy": false,
       "trust_buy": true,
       "sector": "其他電子業"
+    },
+    {
+      "symbol": "6202.TW",
+      "name": "盛群",
+      "close": 57.5,
+      "ma20": 54.38,
+      "volume": 4448,
+      "date": "2026-05-07",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": true,
+      "sector": "半導體業"
     },
     {
       "symbol": "6206.TW",
@@ -1167,6 +1431,18 @@
       "sector": "其他電子業"
     },
     {
+      "symbol": "6672.TW",
+      "name": "騰輝電子-KY",
+      "close": 226.0,
+      "ma20": 189.36,
+      "volume": 6922,
+      "date": "2026-05-07",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": false,
+      "sector": "電子零組件業"
+    },
+    {
       "symbol": "6715.TW",
       "name": "嘉基",
       "close": 489.5,
@@ -1283,8 +1559,8 @@
       "date": "2026-05-11",
       "pattern": "B",
       "foreign_buy": false,
-      "trust_buy": true,
-      "sector": "電腦及週邊設備業"
+      "trust_buy": false,
+      "sector": ""
     },
     {
       "symbol": "8213.TW",
