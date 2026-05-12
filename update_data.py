@@ -15,6 +15,7 @@ VOLUME_RATIO = 1.2          # 近 3 日均量 / 20 日均量
 NEAR_HIGH_RATIO = 0.90      # 收盤 >= 20 日最高 × 90%
 MAX_SINGLE_DAY_RISE = 0.15  # 排除近 20 日最大單日漲幅 > 15%
 INSTITUTION_DAYS = 5        # 法人買超累計天數
+MIN_CONSECUTIVE_BUY_DAYS = 3  # 最近 N 天必須連續正買超
 MA10_MA20_GAP_RATIO = 0.03  # MA10 與 MA20 糾結門檻（3%）
 BATCH_SIZE = 50
 
@@ -144,12 +145,13 @@ def fetch_tpex_institution(date: datetime):
 # ==========================================
 # Step 4：彙整 N 日累計法人買超
 # ==========================================
-def get_institution_buyers(days=INSTITUTION_DAYS):
-    print(f"📡 抓取近 {days} 個交易日法人買超資料...")
+def get_institution_buyers(days=INSTITUTION_DAYS, min_consecutive=MIN_CONSECUTIVE_BUY_DAYS):
+    print(f"📡 抓取近 {days} 個交易日法人買超資料（需最近 {min_consecutive} 天連續正買超）...")
     dates = get_recent_trading_dates(days)
 
-    # {code: {foreign_sum, trust_sum, name}}
-    accum = {}
+    # {code: {'name': str, 'daily': [(foreign, trust), ...]}}
+    # daily index 0 = 最近一天，index -1 = 最舊
+    per_day = {}
 
     for d in dates:
         print(f"   日期：{d.strftime('%Y-%m-%d')}", end=" ")
@@ -161,21 +163,38 @@ def get_institution_buyers(days=INSTITUTION_DAYS):
             continue
         print(f"→ {len(combined)} 檔")
         for code, vals in combined.items():
-            if code not in accum:
-                accum[code] = {'foreign': 0, 'trust': 0, 'name': vals.get('name', '')}
-            accum[code]['foreign'] += vals['foreign']
-            accum[code]['trust']   += vals['trust']
-            if not accum[code]['name']:
-                accum[code]['name'] = vals.get('name', '')
+            if code not in per_day:
+                per_day[code] = {'name': vals.get('name', ''), 'daily': []}
+            per_day[code]['daily'].append((vals['foreign'], vals['trust']))
+            if not per_day[code]['name']:
+                per_day[code]['name'] = vals.get('name', '')
         time.sleep(1)
 
-    # 篩選：外資或投信任一累計買超 > 0，回傳 {code: {'name', 'foreign', 'trust'}}
-    buyers = {
-        code: {'name': v['name'], 'foreign': v['foreign'], 'trust': v['trust']}
-        for code, v in accum.items()
-        if v['foreign'] > 0 or v['trust'] > 0
-    }
-    print(f"✅ 外資或投信近 {days} 日有淨買超：{len(buyers)} 檔")
+    buyers = {}
+    for code, v in per_day.items():
+        daily = v['daily']  # index 0 = 最近一天
+
+        total_foreign = sum(f for f, t in daily)
+        total_trust   = sum(t for f, t in daily)
+
+        # 條件 1：累計買超 > 0
+        if not (total_foreign > 0 or total_trust > 0):
+            continue
+
+        # 條件 2：最近 min_consecutive 天外資或投信任一都是正買超
+        recent = daily[:min_consecutive]
+        if len(recent) < min_consecutive:
+            continue
+        if not all(f > 0 or t > 0 for f, t in recent):
+            continue
+
+        buyers[code] = {
+            'name':    v['name'],
+            'foreign': total_foreign,
+            'trust':   total_trust,
+        }
+
+    print(f"✅ 通過連續 {min_consecutive} 天買超條件：{len(buyers)} 檔")
     return buyers
 
 
@@ -326,16 +345,18 @@ def main():
                 code = sym.replace('.TW', '').replace('.TWO', '')
                 inst = institution_map.get(code, {})
                 passed.append({
-                    'symbol':      sym,
-                    'name':        inst.get('name', ''),
-                    'close':       round(float(latest['Close']), 2),
-                    'ma20':        round(ma20, 2),
-                    'volume':      int(float(latest['Volume']) // 1000),
-                    'date':        df.index[-1].strftime('%Y-%m-%d'),
-                    'pattern':     pattern,
-                    'foreign_buy': inst.get('foreign', 0) > 0,
-                    'trust_buy':   inst.get('trust', 0) > 0,
-                    'sector':      sector_map.get(code, ''),
+                    'symbol':         sym,
+                    'name':           inst.get('name', ''),
+                    'close':          round(float(latest['Close']), 2),
+                    'ma20':           round(ma20, 2),
+                    'volume':         int(float(latest['Volume']) // 1000),
+                    'date':           df.index[-1].strftime('%Y-%m-%d'),
+                    'pattern':        pattern,
+                    'foreign_buy':    inst.get('foreign', 0) > 0,
+                    'trust_buy':      inst.get('trust', 0) > 0,
+                    'foreign_amount': inst.get('foreign', 0),
+                    'trust_amount':   inst.get('trust', 0),
+                    'sector':         sector_map.get(code, ''),
                 })
         except Exception:
             continue

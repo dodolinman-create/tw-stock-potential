@@ -45,13 +45,40 @@ results = data_store.get('results', [])
 
 PATTERN_LABEL = {'A': '型態A（漲後整理）', 'B': '型態B（多頭排列）'}
 
-# 型態篩選器
-pattern_options = ['全部', '型態A（漲後整理）', '型態B（多頭排列）']
-selected_pattern = st.selectbox('型態選擇', pattern_options, label_visibility='collapsed')
+# ==========================================
+# 篩選列（型態 / 產業別 / 排序）
+# ==========================================
+col_pattern, col_sector, col_sort = st.columns([2, 4, 2])
 
+with col_pattern:
+    pattern_options = ['全部', '型態A（漲後整理）', '型態B（多頭排列）']
+    selected_pattern = st.selectbox('型態', pattern_options, label_visibility='collapsed')
+
+with col_sector:
+    all_sectors = sorted(set(r.get('sector', '') for r in results if r.get('sector', '')))
+    selected_sectors = st.multiselect('產業別', all_sectors, placeholder='全部產業')
+
+with col_sort:
+    sort_options = ['代號', '成交量↓', '收盤價↓', '外資買超↓', '投信買超↓']
+    selected_sort = st.selectbox('排序', sort_options, label_visibility='collapsed')
+
+# 套用篩選
 pattern_filter_map = {'型態A（漲後整理）': 'A', '型態B（多頭排列）': 'B'}
 if selected_pattern != '全部':
     results = [r for r in results if r.get('pattern') == pattern_filter_map[selected_pattern]]
+
+if selected_sectors:
+    results = [r for r in results if r.get('sector', '') in selected_sectors]
+
+# 套用排序
+sort_key_map = {
+    '代號':    lambda x: x['symbol'],
+    '成交量↓': lambda x: -x.get('volume', 0),
+    '收盤價↓': lambda x: -x.get('close', 0),
+    '外資買超↓': lambda x: -x.get('foreign_amount', 0),
+    '投信買超↓': lambda x: -x.get('trust_amount', 0),
+}
+results.sort(key=sort_key_map[selected_sort])
 
 symbol_list = [r['symbol'] for r in results]
 info_map    = {r['symbol']: r for r in results}
