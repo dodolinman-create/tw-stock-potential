@@ -437,20 +437,6 @@
       "sector": "半導體業"
     },
     {
-      "symbol": "3587.TWO",
-      "name": "",
-      "close": 385.5,
-      "ma20": 338.0,
-      "volume": 6098,
-      "date": "2026-05-12",
-      "pattern": "A",
-      "foreign_buy": false,
-      "trust_buy": false,
-      "foreign_amount": 0,
-      "trust_amount": 0,
-      "sector": ""
-    },
-    {
       "symbol": "3592.TW",
       "name": "瑞鼎",
       "close": 259.5,
