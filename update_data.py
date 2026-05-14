@@ -17,9 +17,6 @@ MAX_SINGLE_DAY_RISE = 0.15  # 排除近 20 日最大單日漲幅 > 15%
 INSTITUTION_DAYS = 5        # 法人買超累計天數
 MIN_CONSECUTIVE_BUY_DAYS = 3  # 最近 N 天必須連續正買超
 MA10_MA20_GAP_RATIO = 0.03  # MA10 與 MA20 糾結門檻（3%）
-PREV_RUN_RATIO = 1.20       # 型態C：40日最高 >= 收盤 × 120%（曾有明顯拉升）
-PULLBACK_HIGH_RATIO = 0.60  # 型態C：收盤 >= 40日最高 × 60%（未崩跌）
-C_VOLUME_RATIO = 1.0        # 型態C：近3日均量 / 20日均量門檻（量能回升）
 BATCH_SIZE = 50
 
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
@@ -205,7 +202,7 @@ def get_institution_buyers(days=INSTITUTION_DAYS, min_consecutive=MIN_CONSECUTIV
 # Step 5：技術面篩選
 # ==========================================
 def passes_technical_filter(df):
-    """回傳型態字串 'A'（漲後整理）、'B'（多頭排列）、'C'（回測後再噴），不符合回傳 None"""
+    """回傳型態字串 'A'（漲後整理）或 'B'（多頭排列），不符合回傳 None"""
     if len(df) < 80:
         return None
 
@@ -249,34 +246,22 @@ def passes_technical_filter(df):
     if not (ma60_now > ma60_5 > ma60_10 > ma60_20):
         return None
 
-    # 5. 接近 20 日高點（型態 A/B 才需要）
+    # 5. 接近 20 日高點
     high_20 = float(df['High'].astype(float).iloc[-20:].max())
-    near_high = latest_close >= high_20 * NEAR_HIGH_RATIO
+    if latest_close < high_20 * NEAR_HIGH_RATIO:
+        return None
 
-    # 6. 排除剛暴漲（型態 A/B 才需要）
+    # 7. 排除剛暴漲（追高風險）
     daily_ret = close.iloc[-20:].pct_change().dropna()
-    no_spike = float(daily_ret.max()) <= MAX_SINGLE_DAY_RISE
+    if float(daily_ret.max()) > MAX_SINGLE_DAY_RISE:
+        return None
 
-    if near_high and no_spike:
-        ma10_ma20_gap = abs(latest_ma10 - latest_ma20) / latest_ma20
-        if ma10_ma20_gap <= MA10_MA20_GAP_RATIO:
-            return 'A'  # 漲後整理（均線糾結蓄力）
-        elif latest_ma10 > latest_ma20 and latest_ma20 > ma60_now:
-            return 'B'  # 多頭排列（MA10 > MA20 > MA60）
-
-    # 型態 C：回測後再噴
-    # 大方向仍多頭（MA10 > MA60）
-    if latest_ma10 > ma60_now:
-        high_40 = float(df['High'].astype(float).iloc[-40:].max())
-        # 曾有明顯拉升：40日最高 >= 收盤 × 120%
-        if high_40 >= latest_close * PREV_RUN_RATIO:
-            # 未崩跌：收盤 >= 40日最高 × 60%
-            if latest_close >= high_40 * PULLBACK_HIGH_RATIO:
-                # 量能回升：近3日均量 >= 20日均量
-                vol_3 = float(volume.iloc[-3:].mean())
-                if vol_3 / avg_vol_20 >= C_VOLUME_RATIO:
-                    return 'C'  # 回測後再噴
-
+    # 8. 型態分類
+    ma10_ma20_gap = abs(latest_ma10 - latest_ma20) / latest_ma20
+    if ma10_ma20_gap <= MA10_MA20_GAP_RATIO:
+        return 'A'  # 漲後整理（均線糾結蓄力）
+    elif latest_ma10 > latest_ma20 and latest_ma20 > ma60_now:
+        return 'B'  # 多頭排列（MA10 > MA20 > MA60）
     return None
 
 
