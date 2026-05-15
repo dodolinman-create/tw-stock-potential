@@ -260,7 +260,7 @@ def passes_technical_filter(df):
         if (latest_ma10 > ma60_now                          # 仍在上升趨勢
                 and high_40 >= latest_close * PULLBACK_HIGH_RATIO   # 從高點拉回 ≥ 17%
                 and latest_close >= high_40 * PULLBACK_LOW_RATIO    # 未崩跌超過 40%
-                and avg_vol_3 >= avg_vol_20):                        # 近 3 日量回升
+                and avg_vol_3 >= avg_vol_20 * 0.8):                  # 近 3 日量回升（≥20日均量80%）
             return 'C'
 
     # 5. 接近 20 日高點（型態 A / B 使用）
