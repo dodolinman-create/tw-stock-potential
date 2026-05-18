@@ -109,7 +109,7 @@ if selected_syms:
         f'⬇ 下載 TradingView 名單（已選 {len(selected_syms)} 檔）',
         tv_content,
         file_name=f"{datetime.now().strftime('%Y%m%d')}.txt",
-        mime='application/octet-stream',
+        mime='text/plain',
     )
 
 # ==========================================
