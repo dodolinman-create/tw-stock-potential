@@ -147,8 +147,8 @@ def fetch_tpex_institution(date: datetime):
 # ==========================================
 # Step 4：彙整 N 日累計法人買超
 # ==========================================
-def get_institution_buyers(days=INSTITUTION_DAYS, min_consecutive=MIN_CONSECUTIVE_BUY_DAYS):
-    print(f"📡 抓取近 {days} 個交易日法人買超資料（需最近 {min_consecutive} 天連續正買超）...")
+def get_institution_buyers(days=INSTITUTION_DAYS):
+    print(f"📡 抓取近 {days} 個交易日法人買超資料（{days} 天內至少 1 天正買超）...")
     dates = get_recent_trading_dates(days)
 
     # {code: {'name': str, 'daily': [(foreign, trust), ...]}}
@@ -174,20 +174,13 @@ def get_institution_buyers(days=INSTITUTION_DAYS, min_consecutive=MIN_CONSECUTIV
 
     buyers = {}
     for code, v in per_day.items():
-        daily = v['daily']  # index 0 = 最近一天
+        daily = v['daily']
 
         total_foreign = sum(f for f, t in daily)
         total_trust   = sum(t for f, t in daily)
 
-        # 條件 1：累計買超 > 0
-        if not (total_foreign > 0 or total_trust > 0):
-            continue
-
-        # 條件 2：最近 min_consecutive 天外資或投信任一都是正買超
-        recent = daily[:min_consecutive]
-        if len(recent) < min_consecutive:
-            continue
-        if not all(f > 0 or t > 0 for f, t in recent):
+        # 5 天內至少 1 天外資或投信正買超
+        if not any(f > 0 or t > 0 for f, t in daily):
             continue
 
         buyers[code] = {
@@ -196,7 +189,7 @@ def get_institution_buyers(days=INSTITUTION_DAYS, min_consecutive=MIN_CONSECUTIV
             'trust':   total_trust,
         }
 
-    print(f"✅ 通過連續 {min_consecutive} 天買超條件：{len(buyers)} 檔")
+    print(f"✅ 通過條件（5 天內至少 1 天買超）：{len(buyers)} 檔")
     return buyers
 
 
