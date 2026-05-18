@@ -28,8 +28,9 @@ HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
 # Step 0：抓取產業別分類
 # ==========================================
 def fetch_sector_map():
-    """從 TWSE/TPEX ISIN 頁面抓取產業別，回傳 {股票代號: 產業別}"""
+    """從 TWSE/TPEX ISIN 頁面抓取產業別與名稱，回傳 (sector_map, name_map)"""
     sector_map = {}
+    name_map = {}
     for mode in ['2', '4']:  # 2=上市普通股, 4=上櫃普通股
         url = f'https://isin.twse.com.tw/isin/C_public.jsp?strMode={mode}'
         try:
@@ -43,16 +44,20 @@ def fetch_sector_map():
                 first = str(row.iloc[0])
                 if '　' not in first:  # 全形空格分隔代號與名稱
                     continue
-                code = first.split('　')[0].strip()
+                parts = first.split('　')
+                code = parts[0].strip()
                 if not code.isdigit() or len(code) < 4:
                     continue
+                name = parts[1].strip() if len(parts) > 1 else ''
+                if name:
+                    name_map[code] = name
                 sector = str(row.iloc[4]).strip() if len(row) > 4 else ''
                 if sector and sector.lower() != 'nan':
                     sector_map[code] = sector
         except Exception as e:
             print(f'   ⚠️ 產業別抓取失敗 (mode={mode}): {e}')
-    print(f'✅ 產業別：共建立 {len(sector_map)} 檔對照')
-    return sector_map
+    print(f'✅ 產業別：共建立 {len(sector_map)} 檔對照，名稱 {len(name_map)} 檔')
+    return sector_map, name_map
 
 
 # ==========================================
@@ -313,7 +318,7 @@ def main():
 
     # Step 0：產業別分類
     print('🏭 抓取產業別分類...')
-    sector_map = fetch_sector_map()
+    sector_map, name_map = fetch_sector_map()
 
     # Step 1：法人買超清單
     institution_map = get_institution_buyers()
@@ -349,9 +354,10 @@ def main():
                 ma20 = float(df['Close'].astype(float).rolling(20).mean().iloc[-1])
                 code = sym.replace('.TW', '').replace('.TWO', '')
                 inst = institution_map.get(code, {})
+                name = inst.get('name', '') or name_map.get(code, '')
                 passed.append({
                     'symbol':         sym,
-                    'name':           inst.get('name', ''),
+                    'name':           name,
                     'close':          round(float(latest['Close']), 2),
                     'ma20':           round(ma20, 2),
                     'volume':         int(float(latest['Volume']) // 1000),
