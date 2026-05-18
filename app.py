@@ -101,7 +101,7 @@ if not symbol_list:
 # 下載 TradingView 名單按鈕
 selected_syms = [sym for sym in symbol_list if st.session_state.get(f'cb_{sym}', False)]
 if selected_syms:
-    tv_content = '\n'.join(
+    tv_content = ','.join(
         f"{'TWSE' if s.endswith('.TW') else 'TPEX'}:{s.split('.')[0]}"
         for s in selected_syms
     )
