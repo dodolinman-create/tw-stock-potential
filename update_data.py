@@ -12,10 +12,10 @@ from datetime import datetime, timedelta
 MIN_PRICE = 20              # 最低股價（元）
 MIN_AVG_VOLUME = 1000       # 20 日均量最低門檻（張）
 VOLUME_RATIO = 1.2          # 近 3 日均量 / 20 日均量
-NEAR_HIGH_RATIO = 0.90      # 收盤 >= 20 日最高 × 90%
+NEAR_HIGH_RATIO = 0.85      # 收盤 >= 20 日最高 × 85%
 MAX_SINGLE_DAY_RISE = 0.15  # 排除近 20 日最大單日漲幅 > 15%
 INSTITUTION_DAYS = 5        # 法人買超累計天數
-MIN_CONSECUTIVE_BUY_DAYS = 3  # 最近 N 天必須連續正買超
+MIN_CONSECUTIVE_BUY_DAYS = 2  # 最近 N 天必須連續正買超
 MA10_MA20_GAP_RATIO = 0.03  # MA10 與 MA20 糾結門檻（3%）
 PULLBACK_HIGH_RATIO = 1.2   # 型態C：40日高 ≥ 收盤 × 1.2（拉回 ≥ 17%）
 PULLBACK_LOW_RATIO  = 0.6   # 型態C：收盤 ≥ 40日高 × 0.6（未崩超過 40%）
