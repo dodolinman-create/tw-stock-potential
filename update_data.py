@@ -352,7 +352,7 @@ def main():
             if pattern:
                 latest = df.iloc[-1]
                 ma20 = float(df['Close'].astype(float).rolling(20).mean().iloc[-1])
-                code = sym.replace('.TW', '').replace('.TWO', '')
+                code = sym.split('.')[0]
                 inst = institution_map.get(code, {})
                 name = inst.get('name', '') or name_map.get(code, '')
                 passed.append({
