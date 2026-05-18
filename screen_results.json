@@ -45,6 +45,34 @@
       "sector": "電機機械"
     },
     {
+      "symbol": "1708.TW",
+      "name": "東鹼",
+      "close": 40.5,
+      "ma20": 40.23,
+      "volume": 2456,
+      "date": "2026-05-14",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": false,
+      "foreign_amount": 5046532,
+      "trust_amount": 0,
+      "sector": "化學工業"
+    },
+    {
+      "symbol": "1809.TW",
+      "name": "中釉",
+      "close": 39.25,
+      "ma20": 30.85,
+      "volume": 3359,
+      "date": "2026-05-14",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": false,
+      "foreign_amount": 2920916,
+      "trust_amount": 0,
+      "sector": "玻璃陶瓷"
+    },
+    {
       "symbol": "2049.TW",
       "name": "上銀",
       "close": 378.5,
@@ -71,6 +99,20 @@
       "foreign_amount": 47034141,
       "trust_amount": 74360015,
       "sector": "半導體業"
+    },
+    {
+      "symbol": "2308.TW",
+      "name": "台達電",
+      "close": 2155.0,
+      "ma20": 2099.0,
+      "volume": 6872,
+      "date": "2026-05-14",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": true,
+      "foreign_amount": -6936591,
+      "trust_amount": 99912,
+      "sector": "電子零組件業"
     },
     {
       "symbol": "2330.TW",
@@ -451,6 +493,20 @@
       "sector": "電機機械"
     },
     {
+      "symbol": "4739.TW",
+      "name": "康普",
+      "close": 101.5,
+      "ma20": 91.85,
+      "volume": 6815,
+      "date": "2026-05-14",
+      "pattern": "A",
+      "foreign_buy": true,
+      "trust_buy": false,
+      "foreign_amount": 3512808,
+      "trust_amount": -1000,
+      "sector": "化學工業"
+    },
+    {
       "symbol": "4904.TW",
       "name": "遠傳",
       "close": 96.8,
@@ -465,7 +521,21 @@
       "sector": "通信網路業"
     },
     {
-      "symbol": "4966.TWO",
+      "symbol": "4958.TW",
+      "name": "臻鼎-KY",
+      "close": 436.5,
+      "ma20": 375.23,
+      "volume": 68011,
+      "date": "2026-05-14",
+      "pattern": "B",
+      "foreign_buy": true,
+      "trust_buy": true,
+      "foreign_amount": 7905391,
+      "trust_amount": 3187000,
+      "sector": "電子零組件業"
+    },
+    {
+      "symbol": "4991.TWO",
       "name": "",
       "close": 757.0,
       "ma20": 646.2,
@@ -533,6 +603,20 @@
       "foreign_amount": 680598,
       "trust_amount": 352000,
       "sector": "電子零組件業"
+    },
+    {
+      "symbol": "6669.TW",
+      "name": "緯穎",
+      "close": 5435.0,
+      "ma20": 4748.0,
+      "volume": 1597,
+      "date": "2026-05-14",
+      "pattern": "B",
+      "foreign_buy": false,
+      "trust_buy": true,
+      "foreign_amount": -2579560,
+      "trust_amount": 2695549,
+      "sector": "電腦及週邊設備業"
     },
     {
       "symbol": "6831.TW",
