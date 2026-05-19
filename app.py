@@ -4,6 +4,7 @@ import yfinance as yf
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import json
+import base64
 from datetime import datetime, timedelta
 
 # ==========================================
@@ -105,11 +106,14 @@ if selected_syms:
         f"{'TWSE' if s.endswith('.TW') else 'TPEX'}:{s.replace('.TW','').replace('.TWO','')}"
         for s in selected_syms
     )
-    st.download_button(
-        f'⬇ 下載 TradingView 名單（已選 {len(selected_syms)} 檔）',
-        tv_content,
-        file_name=f"{datetime.now().strftime('%Y%m%d')}.txt",
-        mime='text/plain',
+    filename = f"{datetime.now().strftime('%Y%m%d')}.txt"
+    b64 = base64.b64encode(tv_content.encode()).decode()
+    st.markdown(
+        f'<a href="data:text/plain;base64,{b64}" download="{filename}" '
+        f'style="display:inline-block;padding:0.4rem 1rem;background:#ff4b4b;color:white !important;'
+        f'border-radius:0.5rem;text-decoration:none;font-weight:600;font-size:0.9rem;">'
+        f'⬇ 下載 TradingView 名單（已選 {len(selected_syms)} 檔）</a>',
+        unsafe_allow_html=True,
     )
 
 # ==========================================
