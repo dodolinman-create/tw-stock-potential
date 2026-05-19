@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import json
 import base64
+import urllib.parse
 from datetime import datetime, timedelta
 
 # ==========================================
@@ -108,28 +109,17 @@ if selected_syms:
         for s in selected_syms
     )
     filename = f"{datetime.now().strftime('%Y%m%d')}.txt"
-    b64 = base64.b64encode(tv_content.encode()).decode()
-    components.html(f"""<style>
+    encoded = urllib.parse.quote(tv_content, safe='')
+    components.html(
+        f"""<style>
 *{{margin:0;padding:0;box-sizing:border-box;}}body{{background:transparent;}}
-button{{background:#FF4B4B;color:white;border:none;padding:8px 20px;border-radius:6px;
-cursor:pointer;font:600 14px/1.4 sans-serif;}}
-button:hover{{background:#cc3333;}}
+a{{display:inline-block;background:#FF4B4B;color:white;text-decoration:none;
+padding:8px 20px;border-radius:6px;font:600 14px/1.4 sans-serif;}}
+a:hover{{background:#cc3333;}}
 </style>
-<button onclick="dl()">⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）</button>
-<script>
-function dl() {{
-  var win = window;
-  try {{ win = window.top || window.parent || window; }} catch(e) {{}}
-  var code =
-    'var c=atob("{b64}");' +
-    'var u="data:text/plain;charset=utf-8,"+encodeURIComponent(c);' +
-    'var a=document.createElement("a");' +
-    'a.href=u;a.download="{filename}";a.style.display="none";' +
-    'document.body.appendChild(a);a.click();' +
-    'setTimeout(function(){{document.body.removeChild(a);}},500);';
-  (new win.Function(code))();
-}}
-</script>""",
+<a href="data:text/plain;charset=utf-8,{encoded}" download="{filename}">
+⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）
+</a>""",
         height=55, scrolling=False)
     st.code(tv_content, language=None)
 
