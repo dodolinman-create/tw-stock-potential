@@ -1,10 +1,10 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import yfinance as yf
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import json
-import base64
 from datetime import datetime, timedelta
 
 # ==========================================
@@ -107,14 +107,20 @@ if selected_syms:
         for s in selected_syms
     )
     filename = f"{datetime.now().strftime('%Y%m%d')}.txt"
-    b64 = base64.b64encode(tv_content.encode()).decode()
-    st.markdown(
-        f'<a href="data:text/plain;base64,{b64}" download="{filename}" '
-        f'style="display:inline-block;padding:0.4rem 1rem;background:#ff4b4b;color:white !important;'
-        f'border-radius:0.5rem;text-decoration:none;font-weight:600;font-size:0.9rem;">'
-        f'⬇ 下載 TradingView 名單（已選 {len(selected_syms)} 檔）</a>',
-        unsafe_allow_html=True,
-    )
+    components.html(f"""
+        <a id="dl"
+           style="display:inline-block;padding:6px 16px;background:#ff4b4b;color:white;
+                  border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;
+                  font-family:Arial,sans-serif;cursor:pointer;">
+          ⬇ 下載 TradingView 名單（已選 {len(selected_syms)} 檔）
+        </a>
+        <script>
+          var blob = new Blob([{json.dumps(tv_content)}], {{type:'text/plain'}});
+          var a = document.getElementById('dl');
+          a.href = URL.createObjectURL(blob);
+          a.download = '{filename}';
+        </script>
+    """, height=48)
 
 # ==========================================
 # 批次下載 K 線
