@@ -106,18 +106,8 @@ if selected_syms:
         for s in selected_syms
     )
     filename = f"{datetime.now().strftime('%Y%m%d')}.txt"
-    dl_col, txt_col = st.columns([2, 3])
-    with dl_col:
-        st.download_button(
-            f'⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）',
-            tv_content,
-            file_name=filename,
-            mime='text/plain',
-            key='dl_btn',
-        )
-        st.caption('若下載後檔名是亂碼，請手動改名為 ' + filename)
-    with txt_col:
-        st.code(tv_content, language=None)
+    st.markdown(f"**📋 TradingView 清單（已選 {len(selected_syms)} 檔）** — 點右上角複製 → 貼入記事本 → 存成 `{filename}` → 匯入 TradingView")
+    st.code(tv_content, language=None)
 
 # ==========================================
 # 批次下載 K 線
