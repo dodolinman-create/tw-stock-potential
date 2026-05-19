@@ -17,8 +17,6 @@ MAX_SINGLE_DAY_RISE = 0.15  # 排除近 20 日最大單日漲幅 > 15%
 INSTITUTION_DAYS = 5        # 法人買超累計天數
 MIN_CONSECUTIVE_BUY_DAYS = 3  # 最近 N 天必須連續正買超
 MA10_MA20_GAP_RATIO = 0.03  # MA10 與 MA20 糾結門檻（3%）
-PULLBACK_HIGH_RATIO = 1.2   # 型態C：40日高 ≥ 收盤 × 1.2（拉回 ≥ 17%）
-PULLBACK_LOW_RATIO  = 0.6   # 型態C：收盤 ≥ 40日高 × 0.6（未崩超過 40%）
 BATCH_SIZE = 50
 
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
@@ -252,16 +250,6 @@ def passes_technical_filter(df):
     daily_ret = close.iloc[-20:].pct_change().dropna()
     if float(daily_ret.max()) > MAX_SINGLE_DAY_RISE:
         return None
-
-    # 型態 C（回測後再噴）—— 優先判斷，不需通過條件 5
-    if len(df) >= 40:
-        high_40   = float(df['High'].astype(float).iloc[-40:].max())
-        avg_vol_3 = float(volume.iloc[-3:].mean())
-        if (latest_ma10 > ma60_now                          # 仍在上升趨勢
-                and high_40 >= latest_close * PULLBACK_HIGH_RATIO   # 從高點拉回 ≥ 17%
-                and latest_close >= high_40 * PULLBACK_LOW_RATIO    # 未崩跌超過 40%
-                and avg_vol_3 >= avg_vol_20 * 0.8):                  # 近 3 日量回升（≥20日均量80%）
-            return 'C'
 
     # 5. 接近 20 日高點（型態 A / B 使用）
     high_20 = float(df['High'].astype(float).iloc[-20:].max())
