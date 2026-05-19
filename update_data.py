@@ -12,10 +12,10 @@ from datetime import datetime, timedelta
 MIN_PRICE = 20              # 最低股價（元）
 MIN_AVG_VOLUME = 1000       # 20 日均量最低門檻（張）
 VOLUME_RATIO = 1.2          # 近 3 日均量 / 20 日均量
-NEAR_HIGH_RATIO = 0.85      # 收盤 >= 20 日最高 × 85%
+NEAR_HIGH_RATIO = 0.90      # 收盤 >= 20 日最高 × 90%
 MAX_SINGLE_DAY_RISE = 0.15  # 排除近 20 日最大單日漲幅 > 15%
 INSTITUTION_DAYS = 5        # 法人買超累計天數
-MIN_CONSECUTIVE_BUY_DAYS = 2  # 最近 N 天必須連續正買超
+MIN_CONSECUTIVE_BUY_DAYS = 3  # 最近 N 天必須連續正買超
 MA10_MA20_GAP_RATIO = 0.03  # MA10 與 MA20 糾結門檻（3%）
 PULLBACK_HIGH_RATIO = 1.2   # 型態C：40日高 ≥ 收盤 × 1.2（拉回 ≥ 17%）
 PULLBACK_LOW_RATIO  = 0.6   # 型態C：收盤 ≥ 40日高 × 0.6（未崩超過 40%）
@@ -28,9 +28,8 @@ HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
 # Step 0：抓取產業別分類
 # ==========================================
 def fetch_sector_map():
-    """從 TWSE/TPEX ISIN 頁面抓取產業別與名稱，回傳 (sector_map, name_map)"""
+    """從 TWSE/TPEX ISIN 頁面抓取產業別，回傳 {股票代號: 產業別}"""
     sector_map = {}
-    name_map = {}
     for mode in ['2', '4']:  # 2=上市普通股, 4=上櫃普通股
         url = f'https://isin.twse.com.tw/isin/C_public.jsp?strMode={mode}'
         try:
@@ -44,20 +43,16 @@ def fetch_sector_map():
                 first = str(row.iloc[0])
                 if '　' not in first:  # 全形空格分隔代號與名稱
                     continue
-                parts = first.split('　')
-                code = parts[0].strip()
+                code = first.split('　')[0].strip()
                 if not code.isdigit() or len(code) < 4:
                     continue
-                name = parts[1].strip() if len(parts) > 1 else ''
-                if name:
-                    name_map[code] = name
                 sector = str(row.iloc[4]).strip() if len(row) > 4 else ''
                 if sector and sector.lower() != 'nan':
                     sector_map[code] = sector
         except Exception as e:
             print(f'   ⚠️ 產業別抓取失敗 (mode={mode}): {e}')
-    print(f'✅ 產業別：共建立 {len(sector_map)} 檔對照，名稱 {len(name_map)} 檔')
-    return sector_map, name_map
+    print(f'✅ 產業別：共建立 {len(sector_map)} 檔對照')
+    return sector_map
 
 
 # ==========================================
@@ -152,8 +147,8 @@ def fetch_tpex_institution(date: datetime):
 # ==========================================
 # Step 4：彙整 N 日累計法人買超
 # ==========================================
-def get_institution_buyers(days=INSTITUTION_DAYS):
-    print(f"📡 抓取近 {days} 個交易日法人買超資料（{days} 天內至少 1 天正買超）...")
+def get_institution_buyers(days=INSTITUTION_DAYS, min_consecutive=MIN_CONSECUTIVE_BUY_DAYS):
+    print(f"📡 抓取近 {days} 個交易日法人買超資料（需最近 {min_consecutive} 天連續正買超）...")
     dates = get_recent_trading_dates(days)
 
     # {code: {'name': str, 'daily': [(foreign, trust), ...]}}
@@ -179,13 +174,20 @@ def get_institution_buyers(days=INSTITUTION_DAYS):
 
     buyers = {}
     for code, v in per_day.items():
-        daily = v['daily']
+        daily = v['daily']  # index 0 = 最近一天
 
         total_foreign = sum(f for f, t in daily)
         total_trust   = sum(t for f, t in daily)
 
-        # 5 天內至少 1 天外資或投信正買超
-        if not any(f > 0 or t > 0 for f, t in daily):
+        # 條件 1：累計買超 > 0
+        if not (total_foreign > 0 or total_trust > 0):
+            continue
+
+        # 條件 2：最近 min_consecutive 天外資或投信任一都是正買超
+        recent = daily[:min_consecutive]
+        if len(recent) < min_consecutive:
+            continue
+        if not all(f > 0 or t > 0 for f, t in recent):
             continue
 
         buyers[code] = {
@@ -194,7 +196,7 @@ def get_institution_buyers(days=INSTITUTION_DAYS):
             'trust':   total_trust,
         }
 
-    print(f"✅ 通過條件（5 天內至少 1 天買超）：{len(buyers)} 檔")
+    print(f"✅ 通過連續 {min_consecutive} 天買超條件：{len(buyers)} 檔")
     return buyers
 
 
@@ -318,7 +320,7 @@ def main():
 
     # Step 0：產業別分類
     print('🏭 抓取產業別分類...')
-    sector_map, name_map = fetch_sector_map()
+    sector_map = fetch_sector_map()
 
     # Step 1：法人買超清單
     institution_map = get_institution_buyers()
@@ -352,12 +354,11 @@ def main():
             if pattern:
                 latest = df.iloc[-1]
                 ma20 = float(df['Close'].astype(float).rolling(20).mean().iloc[-1])
-                code = sym.split('.')[0]
+                code = sym.replace('.TW', '').replace('.TWO', '')
                 inst = institution_map.get(code, {})
-                name = inst.get('name', '') or name_map.get(code, '')
                 passed.append({
                     'symbol':         sym,
-                    'name':           name,
+                    'name':           inst.get('name', ''),
                     'close':          round(float(latest['Close']), 2),
                     'ma20':           round(ma20, 2),
                     'volume':         int(float(latest['Volume']) // 1000),
