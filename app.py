@@ -118,13 +118,11 @@ button:hover{{background:#cc3333;}}
 <button onclick="dl()">⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）</button>
 <script>
 function dl() {{
-  var b = new Blob([atob('{b64}')], {{type:'text/plain'}});
-  var url = URL.createObjectURL(b);
-  // 在上層 frame 觸發下載，繞過 iframe permission policy 對 downloads 的限制
   var win = window;
-  try {{ if (window.top) win = window.top; }} catch(e) {{
-    try {{ if (window.parent) win = window.parent; }} catch(e2) {{}}
-  }}
+  try {{ win = window.top || window.parent || window; }} catch(e) {{}}
+  // 在 win 的 context 建立 Blob 和 URL，確保 download 屬性被 Chrome 識別
+  var b = new win.Blob([atob('{b64}')], {{type:'text/plain'}});
+  var url = win.URL.createObjectURL(b);
   var a = win.document.createElement('a');
   a.href = url;
   a.download = '{filename}';
@@ -133,7 +131,7 @@ function dl() {{
   a.click();
   setTimeout(function() {{
     try {{ win.document.body.removeChild(a); }} catch(e) {{}}
-    URL.revokeObjectURL(url);
+    win.URL.revokeObjectURL(url);
   }}, 500);
 }}
 </script>""",
