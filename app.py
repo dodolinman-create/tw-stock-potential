@@ -121,12 +121,12 @@ function dl() {{
   var win = window;
   try {{ win = window.top || window.parent || window; }} catch(e) {{}}
   var code =
-    'var b=new Blob([atob("{b64}")],{{type:"text/plain"}});' +
-    'var u=URL.createObjectURL(b);' +
+    'var c=atob("{b64}");' +
+    'var u="data:text/plain;charset=utf-8,"+encodeURIComponent(c);' +
     'var a=document.createElement("a");' +
     'a.href=u;a.download="{filename}";a.style.display="none";' +
     'document.body.appendChild(a);a.click();' +
-    'setTimeout(function(){{document.body.removeChild(a);URL.revokeObjectURL(u);}},500);';
+    'setTimeout(function(){{document.body.removeChild(a);}},500);';
   (new win.Function(code))();
 }}
 </script>""",
