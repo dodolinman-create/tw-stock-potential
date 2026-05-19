@@ -1,10 +1,10 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import yfinance as yf
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import json
-import base64
 from datetime import datetime, timedelta
 
 # ==========================================
@@ -102,18 +102,32 @@ if not symbol_list:
 # 下載 TradingView 名單按鈕
 selected_syms = [sym for sym in symbol_list if st.session_state.get(f'cb_{sym}', False)]
 if selected_syms:
-    tv_content = ','.join(
+    tv_lines = '\n'.join(
         f"{'TWSE' if s.endswith('.TW') else 'TPEX'}:{s.split('.')[0]}"
         for s in selected_syms
     )
     filename = f"{datetime.now().strftime('%Y%m%d')}.txt"
-    b64 = base64.b64encode(tv_content.encode('utf-8')).decode()
-    st.markdown(
-        f'<a href="data:text/plain;base64,{b64}" download="{filename}" '
-        f'style="display:inline-block;padding:0.4rem 0.8rem;background:#FF4B4B;color:white;'
-        f'border-radius:4px;text-decoration:none;font-size:14px;">'
-        f'⬇ 下載 TradingView 名單（已選 {len(selected_syms)} 檔）</a>',
-        unsafe_allow_html=True,
+    content_js = tv_lines.replace('\\', '\\\\').replace('`', '\\`')
+    components.html(
+        f"""
+        <script>
+        function dlTV() {{
+            var blob = new Blob([`{content_js}`], {{type: 'text/plain'}});
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '{filename}';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(a.href);
+        }}
+        </script>
+        <button onclick="dlTV()" style="background:#FF4B4B;color:white;border:none;
+            padding:6px 14px;border-radius:4px;cursor:pointer;font-size:14px;font-weight:bold;">
+          &#11015; 下載 TradingView 名單（已選 {len(selected_syms)} 檔）
+        </button>
+        """,
+        height=45,
     )
 
 # ==========================================
