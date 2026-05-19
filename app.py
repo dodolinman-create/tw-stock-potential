@@ -4,6 +4,7 @@ import yfinance as yf
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import json
+import base64
 from datetime import datetime, timedelta
 
 # ==========================================
@@ -108,11 +109,14 @@ if selected_syms:
     filename = f"{datetime.now().strftime('%Y%m%d')}.txt"
     col_dl, col_code = st.columns([2, 3])
     with col_dl:
-        st.download_button(
-            f'⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）',
-            tv_content, file_name=filename, mime='text/plain', key='dl_btn',
+        b64 = base64.b64encode(tv_content.encode()).decode()
+        st.markdown(
+            f'<a href="data:text/plain;base64,{b64}" download="{filename}" '
+            f'style="display:inline-block;padding:0.4em 1em;background:#FF4B4B;color:white;'
+            f'border-radius:0.5em;text-decoration:none;font-weight:600;">'
+            f'⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）</a>',
+            unsafe_allow_html=True,
         )
-        st.caption('若下載後檔名為亂碼，請改名加上 .txt 副檔名')
     with col_code:
         st.code(tv_content, language=None)
 
