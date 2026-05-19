@@ -120,19 +120,14 @@ button:hover{{background:#cc3333;}}
 function dl() {{
   var win = window;
   try {{ win = window.top || window.parent || window; }} catch(e) {{}}
-  // 在 win 的 context 建立 Blob 和 URL，確保 download 屬性被 Chrome 識別
-  var b = new win.Blob([atob('{b64}')], {{type:'text/plain'}});
-  var url = win.URL.createObjectURL(b);
-  var a = win.document.createElement('a');
-  a.href = url;
-  a.download = '{filename}';
-  a.style.display = 'none';
-  win.document.body.appendChild(a);
-  a.click();
-  setTimeout(function() {{
-    try {{ win.document.body.removeChild(a); }} catch(e) {{}}
-    win.URL.revokeObjectURL(url);
-  }}, 500);
+  var code =
+    'var b=new Blob([atob("{b64}")],{{type:"text/plain"}});' +
+    'var u=URL.createObjectURL(b);' +
+    'var a=document.createElement("a");' +
+    'a.href=u;a.download="{filename}";a.style.display="none";' +
+    'document.body.appendChild(a);a.click();' +
+    'setTimeout(function(){{document.body.removeChild(a);URL.revokeObjectURL(u);}},500);';
+  (new win.Function(code))();
 }}
 </script>""",
         height=55, scrolling=False)
