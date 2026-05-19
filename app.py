@@ -115,13 +115,28 @@ button{{background:#FF4B4B;color:white;border:none;padding:8px 20px;border-radiu
 cursor:pointer;font:600 14px/1.4 sans-serif;}}
 button:hover{{background:#cc3333;}}
 </style>
-<button onclick="(function(){{
-  var b=new Blob([atob('{b64}')],{{type:'text/plain'}});
-  var a=document.createElement('a');
-  a.href=URL.createObjectURL(b);
-  a.download='{filename}';
-  document.body.appendChild(a);a.click();document.body.removeChild(a);
-}})()">⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）</button>""",
+<button onclick="dl()">⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）</button>
+<script>
+function dl() {{
+  var b = new Blob([atob('{b64}')], {{type:'text/plain'}});
+  var url = URL.createObjectURL(b);
+  // 在上層 frame 觸發下載，繞過 iframe permission policy 對 downloads 的限制
+  var win = window;
+  try {{ if (window.top) win = window.top; }} catch(e) {{
+    try {{ if (window.parent) win = window.parent; }} catch(e2) {{}}
+  }}
+  var a = win.document.createElement('a');
+  a.href = url;
+  a.download = '{filename}';
+  a.style.display = 'none';
+  win.document.body.appendChild(a);
+  a.click();
+  setTimeout(function() {{
+    try {{ win.document.body.removeChild(a); }} catch(e) {{}}
+    URL.revokeObjectURL(url);
+  }}, 500);
+}}
+</script>""",
         height=55, scrolling=False)
     st.code(tv_content, language=None)
 
