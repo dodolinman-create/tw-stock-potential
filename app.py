@@ -108,18 +108,29 @@ if selected_syms:
     )
     filename = f"{datetime.now().strftime('%Y%m%d')}.txt"
     components.html(f"""
-        <a id="dl"
-           style="display:inline-block;padding:6px 16px;background:#ff4b4b;color:white;
-                  border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;
-                  font-family:Arial,sans-serif;cursor:pointer;">
+        <a onclick="
+            try {{
+                var b = new window.parent.Blob([{json.dumps(tv_content)}], {{type:'text/plain'}});
+                var u = window.parent.URL.createObjectURL(b);
+                var a = window.parent.document.createElement('a');
+                a.href = u; a.download = '{filename}';
+                window.parent.document.body.appendChild(a);
+                a.click();
+                window.parent.document.body.removeChild(a);
+                window.parent.URL.revokeObjectURL(u);
+            }} catch(e) {{
+                var b = new Blob([{json.dumps(tv_content)}], {{type:'text/plain'}});
+                var u = URL.createObjectURL(b);
+                var a = document.createElement('a');
+                a.href = u; a.download = '{filename}';
+                document.body.appendChild(a); a.click();
+                document.body.removeChild(a); URL.revokeObjectURL(u);
+            }}
+        " style="display:inline-block;padding:6px 16px;background:#ff4b4b;color:white;
+                 border-radius:6px;font-weight:600;font-size:14px;
+                 font-family:Arial,sans-serif;cursor:pointer;">
           ⬇ 下載 TradingView 名單（已選 {len(selected_syms)} 檔）
         </a>
-        <script>
-          var blob = new Blob([{json.dumps(tv_content)}], {{type:'text/plain'}});
-          var a = document.getElementById('dl');
-          a.href = URL.createObjectURL(blob);
-          a.download = '{filename}';
-        </script>
     """, height=48)
 
 # ==========================================
