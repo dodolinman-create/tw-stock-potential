@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit.components.v1 as components
 import pandas as pd
 import yfinance as yf
 import plotly.graph_objects as go
@@ -107,31 +106,18 @@ if selected_syms:
         for s in selected_syms
     )
     filename = f"{datetime.now().strftime('%Y%m%d')}.txt"
-    components.html(f"""
-        <a onclick="
-            try {{
-                var b = new window.parent.Blob([{json.dumps(tv_content)}], {{type:'text/plain'}});
-                var u = window.parent.URL.createObjectURL(b);
-                var a = window.parent.document.createElement('a');
-                a.href = u; a.download = '{filename}';
-                window.parent.document.body.appendChild(a);
-                a.click();
-                window.parent.document.body.removeChild(a);
-                window.parent.URL.revokeObjectURL(u);
-            }} catch(e) {{
-                var b = new Blob([{json.dumps(tv_content)}], {{type:'text/plain'}});
-                var u = URL.createObjectURL(b);
-                var a = document.createElement('a');
-                a.href = u; a.download = '{filename}';
-                document.body.appendChild(a); a.click();
-                document.body.removeChild(a); URL.revokeObjectURL(u);
-            }}
-        " style="display:inline-block;padding:6px 16px;background:#ff4b4b;color:white;
-                 border-radius:6px;font-weight:600;font-size:14px;
-                 font-family:Arial,sans-serif;cursor:pointer;">
-          ⬇ 下載 TradingView 名單（已選 {len(selected_syms)} 檔）
-        </a>
-    """, height=48)
+    dl_col, txt_col = st.columns([2, 3])
+    with dl_col:
+        st.download_button(
+            f'⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）',
+            tv_content,
+            file_name=filename,
+            mime='text/plain',
+            key='dl_btn',
+        )
+        st.caption('若下載後檔名是亂碼，請手動改名為 ' + filename)
+    with txt_col:
+        st.code(tv_content, language=None)
 
 # ==========================================
 # 批次下載 K 線
