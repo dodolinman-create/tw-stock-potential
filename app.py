@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import yfinance as yf
 import plotly.graph_objects as go
@@ -107,20 +108,22 @@ if selected_syms:
         for s in selected_syms
     )
     filename = f"{datetime.now().strftime('%Y%m%d')}.txt"
-    col_dl, col_code = st.columns([2, 3])
-    with col_dl:
-        b64 = base64.b64encode(tv_content.encode()).decode()
-        st.html(f"""<button onclick="(function(){{
-    var b=new Blob([atob('{b64}')],{{type:'text/plain'}});
-    var a=document.createElement('a');
-    a.href=URL.createObjectURL(b);
-    a.download='{filename}';
-    document.body.appendChild(a);a.click();document.body.removeChild(a);
-}})()" style="background:#FF4B4B;color:white;border:none;padding:6px 18px;
-border-radius:6px;cursor:pointer;font:600 14px/1.5 sans-serif;">
-⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）</button>""")
-    with col_code:
-        st.code(tv_content, language=None)
+    b64 = base64.b64encode(tv_content.encode()).decode()
+    components.html(f"""<style>
+*{{margin:0;padding:0;box-sizing:border-box;}}body{{background:transparent;}}
+button{{background:#FF4B4B;color:white;border:none;padding:8px 20px;border-radius:6px;
+cursor:pointer;font:600 14px/1.4 sans-serif;}}
+button:hover{{background:#cc3333;}}
+</style>
+<button onclick="(function(){{
+  var b=new Blob([atob('{b64}')],{{type:'text/plain'}});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(b);
+  a.download='{filename}';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
+}})()">⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）</button>""",
+        height=55, scrolling=False)
+    st.code(tv_content, language=None)
 
 # ==========================================
 # 批次下載 K 線
