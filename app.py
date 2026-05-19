@@ -1,12 +1,10 @@
 import streamlit as st
-import streamlit.components.v1 as components
 import pandas as pd
 import yfinance as yf
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import json
 import base64
-import urllib.parse
 from datetime import datetime, timedelta
 
 # ==========================================
@@ -109,18 +107,12 @@ if selected_syms:
         for s in selected_syms
     )
     filename = f"{datetime.now().strftime('%Y%m%d')}.txt"
-    encoded = urllib.parse.quote(tv_content, safe='')
-    components.html(
-        f"""<style>
-*{{margin:0;padding:0;box-sizing:border-box;}}body{{background:transparent;}}
-a{{display:inline-block;background:#FF4B4B;color:white;text-decoration:none;
-padding:8px 20px;border-radius:6px;font:600 14px/1.4 sans-serif;}}
-a:hover{{background:#cc3333;}}
-</style>
-<a href="data:text/plain;charset=utf-8,{encoded}" download="{filename}">
-⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）
-</a>""",
-        height=55, scrolling=False)
+    st.download_button(
+        label=f"⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）",
+        data=tv_content,
+        file_name=filename,
+        mime="text/plain",
+    )
     st.code(tv_content, language=None)
 
 # ==========================================
