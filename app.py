@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit.components.v1 as components
 import pandas as pd
 import yfinance as yf
 import plotly.graph_objects as go
@@ -111,8 +110,7 @@ if selected_syms:
     col_dl, col_code = st.columns([2, 3])
     with col_dl:
         b64 = base64.b64encode(tv_content.encode()).decode()
-        st.markdown(
-            f"""<button onclick="(function(){{
+        st.html(f"""<button onclick="(function(){{
     var b=new Blob([atob('{b64}')],{{type:'text/plain'}});
     var a=document.createElement('a');
     a.href=URL.createObjectURL(b);
@@ -120,9 +118,7 @@ if selected_syms:
     document.body.appendChild(a);a.click();document.body.removeChild(a);
 }})()" style="background:#FF4B4B;color:white;border:none;padding:6px 18px;
 border-radius:6px;cursor:pointer;font:600 14px/1.5 sans-serif;">
-⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）</button>""",
-            unsafe_allow_html=True,
-        )
+⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）</button>""")
     with col_code:
         st.code(tv_content, language=None)
 
