@@ -4,7 +4,6 @@ import yfinance as yf
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import json
-import os
 from datetime import datetime, timedelta
 
 # ==========================================
@@ -103,20 +102,19 @@ if not symbol_list:
 selected_syms = [sym for sym in symbol_list if st.session_state.get(f'cb_{sym}', False)]
 if selected_syms:
     tv_content = ','.join(
-        f"{'TWSE' if s.endswith('.TW') else 'TPEX'}:{s.replace('.TW','').replace('.TWO','')}"
+        f"{'TWSE' if s.endswith('.TW') else 'TPEX'}:{s.split('.')[0]}"
         for s in selected_syms
     )
     filename = f"{datetime.now().strftime('%Y%m%d')}.txt"
-    os.makedirs('static', exist_ok=True)
-    with open(f'static/{filename}', 'w', encoding='utf-8') as f:
-        f.write(tv_content)
-    st.markdown(
-        f'<a href="/app/static/{filename}" download="{filename}" '
-        f'style="display:inline-block;padding:0.4rem 1.2rem;background:#ff4b4b;'
-        f'color:white!important;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.95rem;">'
-        f'⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）</a>',
-        unsafe_allow_html=True,
-    )
+    col_dl, col_code = st.columns([2, 3])
+    with col_dl:
+        st.download_button(
+            f'⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）',
+            tv_content, file_name=filename, mime='text/plain', key='dl_btn',
+        )
+        st.caption('若下載後檔名為亂碼，請改名加上 .txt 副檔名')
+    with col_code:
+        st.code(tv_content, language=None)
 
 # ==========================================
 # 批次下載 K 線
