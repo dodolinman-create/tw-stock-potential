@@ -13,6 +13,7 @@ MIN_PRICE = 20              # 最低股價（元）
 MIN_AVG_VOLUME = 1000       # 20 日均量最低門檻（張）
 VOLUME_RATIO = 1.2          # 近 3 日均量 / 20 日均量
 NEAR_HIGH_RATIO = 0.90      # 收盤 >= 20 日最高 × 90%
+CANDIDATE_NEAR_HIGH_RATIO = 0.82  # 候補清單接近高點門檻（82%）
 MAX_SINGLE_DAY_RISE = 0.15  # 排除近 20 日最大單日漲幅 > 15%
 INSTITUTION_DAYS = 5        # 法人買超累計天數
 MIN_CONSECUTIVE_BUY_DAYS = 3  # 最近 N 天必須連續正買超
@@ -146,11 +147,13 @@ def fetch_tpex_institution(date: datetime):
 # Step 4：彙整 N 日累計法人買超
 # ==========================================
 def get_institution_buyers(days=INSTITUTION_DAYS, min_consecutive=MIN_CONSECUTIVE_BUY_DAYS):
+    """回傳 (strict, loose) 兩個 dict。
+    strict：累計 > 0 且最近 min_consecutive 天連續正買超（主清單用）
+    loose ：累計 > 0 但未達連續條件（候補清單用）
+    """
     print(f"📡 抓取近 {days} 個交易日法人買超資料（需最近 {min_consecutive} 天連續正買超）...")
     dates = get_recent_trading_dates(days)
 
-    # {code: {'name': str, 'daily': [(foreign, trust), ...]}}
-    # daily index 0 = 最近一天，index -1 = 最舊
     per_day = {}
 
     for d in dates:
@@ -170,39 +173,38 @@ def get_institution_buyers(days=INSTITUTION_DAYS, min_consecutive=MIN_CONSECUTIV
                 per_day[code]['name'] = vals.get('name', '')
         time.sleep(1)
 
-    buyers = {}
+    strict = {}
+    loose  = {}
     for code, v in per_day.items():
-        daily = v['daily']  # index 0 = 最近一天
+        daily = v['daily']
 
         total_foreign = sum(f for f, t in daily)
         total_trust   = sum(t for f, t in daily)
 
-        # 條件 1：累計買超 > 0
         if not (total_foreign > 0 or total_trust > 0):
             continue
 
-        # 條件 2：最近 min_consecutive 天外資或投信任一都是正買超
+        entry = {'name': v['name'], 'foreign': total_foreign, 'trust': total_trust}
+
         recent = daily[:min_consecutive]
-        if len(recent) < min_consecutive:
-            continue
-        if not all(f > 0 or t > 0 for f, t in recent):
-            continue
+        is_consecutive = (len(recent) >= min_consecutive and
+                          all(f > 0 or t > 0 for f, t in recent))
 
-        buyers[code] = {
-            'name':    v['name'],
-            'foreign': total_foreign,
-            'trust':   total_trust,
-        }
+        if is_consecutive:
+            strict[code] = entry
+        else:
+            loose[code] = entry
 
-    print(f"✅ 通過連續 {min_consecutive} 天買超條件：{len(buyers)} 檔")
-    return buyers
+    print(f"✅ 嚴格條件（連續 {min_consecutive} 天）：{len(strict)} 檔")
+    print(f"✅ 候補法人（累計買超未連續）：{len(loose)} 檔")
+    return strict, loose
 
 
 # ==========================================
 # Step 5：技術面篩選
 # ==========================================
-def passes_technical_filter(df):
-    """回傳型態字串 'A'（漲後整理）、'B'（多頭排列）或 'C'（回測後再噴），不符合回傳 None"""
+def passes_technical_filter(df, near_high_ratio=NEAR_HIGH_RATIO):
+    """回傳型態字串 'A'（漲後整理）、'B'（多頭排列），不符合回傳 None"""
     if len(df) < 80:
         return None
 
@@ -253,7 +255,7 @@ def passes_technical_filter(df):
 
     # 5. 接近 20 日高點（型態 A / B 使用）
     high_20 = float(df['High'].astype(float).iloc[-20:].max())
-    if latest_close < high_20 * NEAR_HIGH_RATIO:
+    if latest_close < high_20 * near_high_ratio:
         return None
 
     # 型態 A / B 分類
@@ -300,6 +302,29 @@ def download_batch(tickers, start_date, end_date):
 # ==========================================
 # 主程式
 # ==========================================
+def _build_result(sym, df, inst, sector_map, extra=None):
+    """把一筆技術面通過的股票組成 dict，extra 用來加入候補專屬欄位。"""
+    latest = df.iloc[-1]
+    ma20   = float(df['Close'].astype(float).rolling(20).mean().iloc[-1])
+    code   = sym.split('.')[0]
+    record = {
+        'symbol':         sym,
+        'name':           inst.get('name', ''),
+        'close':          round(float(latest['Close']), 2),
+        'ma20':           round(ma20, 2),
+        'volume':         int(float(latest['Volume']) // 1000),
+        'date':           df.index[-1].strftime('%Y-%m-%d'),
+        'foreign_buy':    inst.get('foreign', 0) > 0,
+        'trust_buy':      inst.get('trust', 0) > 0,
+        'foreign_amount': inst.get('foreign', 0),
+        'trust_amount':   inst.get('trust', 0),
+        'sector':         sector_map.get(code, ''),
+    }
+    if extra:
+        record.update(extra)
+    return record
+
+
 def main():
     print("=" * 50)
     print("  台股強勢潛力股掃描器")
@@ -310,18 +335,15 @@ def main():
     print('🏭 抓取產業別分類...')
     sector_map = fetch_sector_map()
 
-    # Step 1：法人買超清單
-    institution_map = get_institution_buyers()
-    if not institution_map:
+    # Step 1：法人買超清單（嚴格 + 候補）
+    strict_buyers, loose_buyers = get_institution_buyers()
+    if not strict_buyers and not loose_buyers:
         print("❌ 無法取得法人資料，程式終止")
         return
 
-    # institution_map = {code: {'name': str, 'foreign': int, 'trust': int}}
-    codes = list(institution_map.keys())
-
-    # 轉 yfinance 代號（上市 .TW、上櫃 .TWO 都試）
-    all_tickers = [f"{c}.TW" for c in codes] + \
-                  [f"{c}.TWO" for c in codes]
+    all_codes   = set(strict_buyers) | set(loose_buyers)
+    all_tickers = [f"{c}.TW" for c in all_codes] + \
+                  [f"{c}.TWO" for c in all_codes]
 
     print(f"\n📦 下載 {len(all_tickers)} 個代號的技術資料...")
     end_date   = datetime.now() + timedelta(days=1)
@@ -333,47 +355,89 @@ def main():
         end_date.strftime('%Y-%m-%d'),
     )
 
-    # Step 2：技術面篩選
-    print(f"\n🔍 技術面篩選（共 {len(data_dict)} 檔有資料）...")
-    passed = []
+    # Step 2：主清單（嚴格法人 + 技術面 90%）
+    print(f"\n🔍 主清單技術面篩選（共 {len(data_dict)} 檔有資料）...")
+    main_results = []
+    main_codes   = set()
+
     for sym, df in data_dict.items():
+        code = sym.split('.')[0]
+        if code not in strict_buyers:
+            continue
         try:
             pattern = passes_technical_filter(df)
             if pattern:
-                latest = df.iloc[-1]
-                ma20 = float(df['Close'].astype(float).rolling(20).mean().iloc[-1])
-                code = sym.split('.')[0]
-                inst = institution_map.get(code, {})
-                passed.append({
-                    'symbol':         sym,
-                    'name':           inst.get('name', ''),
-                    'close':          round(float(latest['Close']), 2),
-                    'ma20':           round(ma20, 2),
-                    'volume':         int(float(latest['Volume']) // 1000),
-                    'date':           df.index[-1].strftime('%Y-%m-%d'),
-                    'pattern':        pattern,
-                    'foreign_buy':    inst.get('foreign', 0) > 0,
-                    'trust_buy':      inst.get('trust', 0) > 0,
-                    'foreign_amount': inst.get('foreign', 0),
-                    'trust_amount':   inst.get('trust', 0),
-                    'sector':         sector_map.get(code, ''),
-                })
+                inst = strict_buyers[code]
+                main_results.append(_build_result(sym, df, inst, sector_map, {'pattern': pattern}))
+                main_codes.add(code)
         except Exception:
             continue
 
-    passed.sort(key=lambda x: x['symbol'])
+    main_results.sort(key=lambda x: x['symbol'])
+    print(f"✅ 主清單：{len(main_results)} 檔")
+
+    # Step 3：候補清單
+    # 型態 1：鬆散法人（累計 > 0 未連續）+ 技術面嚴格 90%
+    # 型態 2：嚴格法人 + 技術面放寬 82-89%
+    print(f"\n🔍 候補清單篩選...")
+    candidates     = []
+    candidate_codes = set()
+
+    for sym, df in data_dict.items():
+        code = sym.split('.')[0]
+        if code in main_codes or code in candidate_codes:
+            continue
+        if code not in loose_buyers:
+            continue
+        try:
+            pattern = passes_technical_filter(df)
+            if pattern:
+                inst = loose_buyers[code]
+                candidates.append(_build_result(sym, df, inst, sector_map, {
+                    'pattern':          pattern,
+                    'candidate_reason': '法人未連續買超',
+                }))
+                candidate_codes.add(code)
+        except Exception:
+            continue
+
+    for sym, df in data_dict.items():
+        code = sym.split('.')[0]
+        if code in main_codes or code in candidate_codes:
+            continue
+        if code not in strict_buyers:
+            continue
+        try:
+            pattern = passes_technical_filter(df, near_high_ratio=CANDIDATE_NEAR_HIGH_RATIO)
+            if pattern:
+                close  = float(df['Close'].iloc[-1])
+                high20 = float(df['High'].astype(float).iloc[-20:].max())
+                pct    = close / high20 * 100
+                inst   = strict_buyers[code]
+                candidates.append(_build_result(sym, df, inst, sector_map, {
+                    'pattern':          pattern,
+                    'candidate_reason': f'接近高點 {pct:.0f}%',
+                }))
+                candidate_codes.add(code)
+        except Exception:
+            continue
+
+    candidates.sort(key=lambda x: x['symbol'])
+    print(f"✅ 候補清單：{len(candidates)} 檔")
 
     tw_time = datetime.utcnow() + timedelta(hours=8)
     output = {
-        'last_updated': tw_time.strftime('%Y-%m-%d %H:%M:%S'),
-        'total': len(passed),
-        'results': passed,
+        'last_updated':      tw_time.strftime('%Y-%m-%d %H:%M:%S'),
+        'total':             len(main_results),
+        'results':           main_results,
+        'candidates':        candidates,
+        'candidates_total':  len(candidates),
     }
 
     with open('screen_results.json', 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✅ 完成！共找到 {len(passed)} 檔強勢潛力股")
+    print(f"\n✅ 完成！主清單 {len(main_results)} 檔 ／ 候補清單 {len(candidates)} 檔")
     print("📄 已存入 screen_results.json")
 
 
