@@ -96,7 +96,7 @@ def render_chart_grid(stock_list, stock_data, tab_prefix='main'):
     selected_syms = [sym for sym in symbol_list
                      if st.session_state.get(f'cb_{tab_prefix}_{sym}', False)]
     if selected_syms:
-        tv_content = ','.join(
+        tv_content = '\n'.join(
             f"{'TWSE' if s.endswith('.TW') else 'TPEX'}:{s.split('.')[0]}"
             for s in selected_syms
         )
