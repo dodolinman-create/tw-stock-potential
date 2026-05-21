@@ -105,7 +105,7 @@ def render_chart_grid(stock_list, stock_data, tab_prefix='main'):
         with open(f'static/{filename}', 'w', encoding='utf-8') as f:
             f.write(tv_content)
         st.markdown(
-            f'<a href="/app/static/{filename}" download="{filename}" '
+            f'<a href="/~/+/app/static/{filename}" download="{filename}" '
             f'style="display:inline-block;padding:0.4rem 1.2rem;background:#FF4B4B;'
             f'color:white!important;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.95rem;">'
             f'⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）</a>',
