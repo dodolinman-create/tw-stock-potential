@@ -12,7 +12,7 @@ from datetime import datetime, timedelta
 MIN_PRICE = 20              # 最低股價（元）
 MIN_AVG_VOLUME = 1000       # 20 日均量最低門檻（張）
 VOLUME_RATIO = 1.2          # 近 3 日均量 / 20 日均量
-NEAR_HIGH_RATIO = 0.90      # 收盤 >= 20 日最高 × 90%
+NEAR_HIGH_RATIO = 0.85      # 收盤 >= 20 日最高 × 85%
 CANDIDATE_NEAR_HIGH_RATIO = 0.82  # 候補清單接近高點門檻（82%）
 MAX_SINGLE_DAY_RISE = 0.15  # 排除近 20 日最大單日漲幅 > 15%
 INSTITUTION_DAYS = 5        # 法人買超累計天數
