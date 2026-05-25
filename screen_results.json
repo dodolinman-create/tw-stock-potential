@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-25 19:00:28",
-  "total": 119,
+  "last_updated": "2026-05-25 21:49:53",
+  "total": 110,
   "results": [
     {
       "symbol": "1560.TW",
@@ -661,20 +661,6 @@
       "pattern": "B"
     },
     {
-      "symbol": "3152.TWO",
-      "name": "璟德",
-      "close": 199.5,
-      "ma20": 172.4,
-      "volume": 2748,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 1536964,
-      "trust_amount": 1536964,
-      "sector": "通信網路業",
-      "pattern": "A"
-    },
-    {
       "symbol": "3189.TW",
       "name": "景碩",
       "close": 669.0,
@@ -728,20 +714,6 @@
       "foreign_amount": 935006,
       "trust_amount": 935006,
       "sector": "通信網路業",
-      "pattern": "A"
-    },
-    {
-      "symbol": "3265.TWO",
-      "name": "台星科",
-      "close": 189.5,
-      "ma20": 178.57,
-      "volume": 2731,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 1681977,
-      "trust_amount": 1681977,
-      "sector": "半導體業",
       "pattern": "A"
     },
     {
@@ -843,20 +815,6 @@
       "pattern": "B"
     },
     {
-      "symbol": "3498.TWO",
-      "name": "陽程",
-      "close": 159.0,
-      "ma20": 116.26,
-      "volume": 1103,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 975604,
-      "trust_amount": 975604,
-      "sector": "其他電子業",
-      "pattern": "B"
-    },
-    {
       "symbol": "3583.TW",
       "name": "辛耘",
       "close": 916.0,
@@ -869,20 +827,6 @@
       "trust_amount": 183000,
       "sector": "半導體業",
       "pattern": "B"
-    },
-    {
-      "symbol": "3594.TWO",
-      "name": "磐儀",
-      "close": 52.0,
-      "ma20": 52.52,
-      "volume": 502,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 553890,
-      "trust_amount": 553890,
-      "sector": "電腦及週邊設備業",
-      "pattern": "A"
     },
     {
       "symbol": "3661.TW",
@@ -1179,34 +1123,6 @@
       "pattern": "A"
     },
     {
-      "symbol": "5464.TWO",
-      "name": "霖宏",
-      "close": 73.0,
-      "ma20": 52.43,
-      "volume": 640,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 735000,
-      "trust_amount": 735000,
-      "sector": "電子零組件業",
-      "pattern": "B"
-    },
-    {
-      "symbol": "6104.TWO",
-      "name": "創惟",
-      "close": 103.0,
-      "ma20": 99.27,
-      "volume": 2392,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 2023997,
-      "trust_amount": 2023997,
-      "sector": "半導體業",
-      "pattern": "A"
-    },
-    {
       "symbol": "6139.TW",
       "name": "亞翔",
       "close": 807.0,
@@ -1330,20 +1246,6 @@
       "foreign_amount": 7316604,
       "trust_amount": 1103000,
       "sector": "半導體業",
-      "pattern": "B"
-    },
-    {
-      "symbol": "6274.TWO",
-      "name": "台燿",
-      "close": 1600.0,
-      "ma20": 1279.05,
-      "volume": 1482,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 1195673,
-      "trust_amount": 1195673,
-      "sector": "電子零組件業",
       "pattern": "B"
     },
     {
@@ -1557,20 +1459,6 @@
       "pattern": "A"
     },
     {
-      "symbol": "8182.TWO",
-      "name": "加高",
-      "close": 45.45,
-      "ma20": 37.95,
-      "volume": 5283,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 1552095,
-      "trust_amount": 1552095,
-      "sector": "電子零組件業",
-      "pattern": "A"
-    },
-    {
       "symbol": "8210.TW",
       "name": "勤誠",
       "close": 1435.0,
@@ -1610,20 +1498,6 @@
       "foreign_amount": 35715,
       "trust_amount": 63000,
       "sector": "半導體業",
-      "pattern": "B"
-    },
-    {
-      "symbol": "8289.TWO",
-      "name": "泰藝",
-      "close": 67.9,
-      "ma20": 52.54,
-      "volume": 13906,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 1696813,
-      "trust_amount": 1696813,
-      "sector": "電子零組件業",
       "pattern": "B"
     },
     {
@@ -1788,21 +1662,6 @@
       "trust_amount": 218139,
       "sector": "電機機械",
       "pattern": "A",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "2221.TWO",
-      "name": "大甲",
-      "close": 44.35,
-      "ma20": 40.05,
-      "volume": 693,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 12964,
-      "trust_amount": 12964,
-      "sector": "其他業",
-      "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
     {
@@ -2376,36 +2235,6 @@
       "candidate_reason": "法人未連續買超"
     },
     {
-      "symbol": "3211.TWO",
-      "name": "順達",
-      "close": 426.5,
-      "ma20": 375.82,
-      "volume": 21819,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 1361770,
-      "trust_amount": 1361770,
-      "sector": "電腦及週邊設備業",
-      "pattern": "A",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "3217.TWO",
-      "name": "優群",
-      "close": 200.0,
-      "ma20": 181.47,
-      "volume": 4524,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 2378308,
-      "trust_amount": 2378308,
-      "sector": "電子零組件業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
       "symbol": "3221.TWO",
       "name": "台嘉碩",
       "close": 60.2,
@@ -2436,21 +2265,6 @@
       "candidate_reason": "法人未連續買超"
     },
     {
-      "symbol": "3293.TWO",
-      "name": "鈊象",
-      "close": 741.0,
-      "ma20": 735.65,
-      "volume": 1796,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 537381,
-      "trust_amount": 537381,
-      "sector": "文化創意業",
-      "pattern": "A",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
       "symbol": "3354.TWO",
       "name": "律勝",
       "close": 33.75,
@@ -2461,21 +2275,6 @@
       "trust_buy": true,
       "foreign_amount": 46528,
       "trust_amount": 46528,
-      "sector": "電子零組件業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "3357.TWO",
-      "name": "臺慶科",
-      "close": 274.0,
-      "ma20": 202.9,
-      "volume": 12994,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 1654260,
-      "trust_amount": 1654260,
       "sector": "電子零組件業",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
@@ -2508,21 +2307,6 @@
       "trust_amount": -1084000,
       "sector": "半導體業",
       "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "3483.TWO",
-      "name": "力致",
-      "close": 99.2,
-      "ma20": 91.84,
-      "volume": 2084,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 711523,
-      "trust_amount": 711523,
-      "sector": "電腦及週邊設備業",
-      "pattern": "A",
       "candidate_reason": "法人未連續買超"
     },
     {
@@ -2583,21 +2367,6 @@
       "trust_amount": 0,
       "sector": "其他電子業",
       "pattern": "A",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "3526.TWO",
-      "name": "凡甲",
-      "close": 373.0,
-      "ma20": 360.3,
-      "volume": 1386,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 33953,
-      "trust_amount": 33953,
-      "sector": "電子零組件業",
-      "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
     {
@@ -2691,36 +2460,6 @@
       "candidate_reason": "法人未連續買超"
     },
     {
-      "symbol": "3615.TWO",
-      "name": "安可",
-      "close": 52.3,
-      "ma20": 36.97,
-      "volume": 17927,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 2535000,
-      "trust_amount": 2535000,
-      "sector": "光電業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "3663.TWO",
-      "name": "鑫科",
-      "close": 91.7,
-      "ma20": 73.63,
-      "volume": 10661,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 212469,
-      "trust_amount": 212469,
-      "sector": "其他電子業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
       "symbol": "3675.TWO",
       "name": "德微",
       "close": 334.0,
@@ -2732,21 +2471,6 @@
       "foreign_amount": 1870925,
       "trust_amount": 1870925,
       "sector": "半導體業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "3691.TWO",
-      "name": "碩禾",
-      "close": 144.5,
-      "ma20": 136.43,
-      "volume": 2592,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 656787,
-      "trust_amount": 656787,
-      "sector": "光電業",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
@@ -2871,36 +2595,6 @@
       "candidate_reason": "法人未連續買超"
     },
     {
-      "symbol": "4749.TWO",
-      "name": "新應材",
-      "close": 1155.0,
-      "ma20": 1054.0,
-      "volume": 2834,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 699962,
-      "trust_amount": 699962,
-      "sector": "半導體業",
-      "pattern": "A",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "4903.TWO",
-      "name": "聯光通",
-      "close": 47.05,
-      "ma20": 45.73,
-      "volume": 3719,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 1480109,
-      "trust_amount": 1480109,
-      "sector": "通信網路業",
-      "pattern": "A",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
       "symbol": "4906.TW",
       "name": "正文",
       "close": 44.3,
@@ -2913,36 +2607,6 @@
       "trust_amount": -15000,
       "sector": "通信網路業",
       "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "4931.TWO",
-      "name": "新盛力",
-      "close": 223.5,
-      "ma20": 180.72,
-      "volume": 14137,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 1060044,
-      "trust_amount": 1060044,
-      "sector": "電腦及週邊設備業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "4933.TWO",
-      "name": "友輝",
-      "close": 74.3,
-      "ma20": 71.22,
-      "volume": 1051,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 35722,
-      "trust_amount": 35722,
-      "sector": "光電業",
-      "pattern": "A",
       "candidate_reason": "法人未連續買超"
     },
     {
@@ -2988,21 +2652,6 @@
       "trust_amount": 286366,
       "sector": "半導體業",
       "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "4971.TWO",
-      "name": "IET-KY",
-      "close": 745.0,
-      "ma20": 743.7,
-      "volume": 329,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 178597,
-      "trust_amount": 178597,
-      "sector": "半導體業",
-      "pattern": "A",
       "candidate_reason": "法人未連續買超"
     },
     {
@@ -3141,36 +2790,6 @@
       "candidate_reason": "法人未連續買超"
     },
     {
-      "symbol": "6174.TWO",
-      "name": "安碁",
-      "close": 47.5,
-      "ma20": 38.62,
-      "volume": 8259,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 836974,
-      "trust_amount": 836974,
-      "sector": "電子零組件業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "6190.TWO",
-      "name": "萬泰科",
-      "close": 79.8,
-      "ma20": 76.46,
-      "volume": 9743,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 258278,
-      "trust_amount": 258278,
-      "sector": "通信網路業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
       "symbol": "6208.TWO",
       "name": "日揚",
       "close": 100.0,
@@ -3201,21 +2820,6 @@
       "candidate_reason": "法人未連續買超"
     },
     {
-      "symbol": "6227.TWO",
-      "name": "茂綸",
-      "close": 131.0,
-      "ma20": 106.78,
-      "volume": 3110,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 1497233,
-      "trust_amount": 1497233,
-      "sector": "電子通路業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
       "symbol": "6244.TWO",
       "name": "茂迪",
       "close": 30.65,
@@ -3231,21 +2835,6 @@
       "candidate_reason": "法人未連續買超"
     },
     {
-      "symbol": "6261.TWO",
-      "name": "久元",
-      "close": 121.0,
-      "ma20": 112.85,
-      "volume": 8457,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 508355,
-      "trust_amount": 508355,
-      "sector": "半導體業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
       "symbol": "6285.TW",
       "name": "啟碁",
       "close": 298.0,
@@ -3257,21 +2846,6 @@
       "foreign_amount": 5609507,
       "trust_amount": -5749976,
       "sector": "通信網路業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "6291.TWO",
-      "name": "沛亨",
-      "close": 534.0,
-      "ma20": 472.15,
-      "volume": 2719,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 760185,
-      "trust_amount": 760185,
-      "sector": "半導體業",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
@@ -3351,21 +2925,6 @@
       "candidate_reason": "法人未連續買超"
     },
     {
-      "symbol": "6462.TWO",
-      "name": "神盾",
-      "close": 155.0,
-      "ma20": 130.82,
-      "volume": 7243,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 1857780,
-      "trust_amount": 1857780,
-      "sector": "半導體業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
       "symbol": "6525.TW",
       "name": "捷敏-KY",
       "close": 122.0,
@@ -3377,36 +2936,6 @@
       "foreign_amount": 653791,
       "trust_amount": -20809,
       "sector": "半導體業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "6530.TWO",
-      "name": "創威",
-      "close": 114.0,
-      "ma20": 111.38,
-      "volume": 1601,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 12999,
-      "trust_amount": 12999,
-      "sector": "通信網路業",
-      "pattern": "A",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "6642.TWO",
-      "name": "富致",
-      "close": 90.3,
-      "ma20": 68.9,
-      "volume": 1873,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 146606,
-      "trust_amount": 146606,
-      "sector": "電子零組件業",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
@@ -3467,21 +2996,6 @@
       "foreign_amount": 585907,
       "trust_amount": 0,
       "sector": "電子零組件業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "7712.TWO",
-      "name": "博盛半導體",
-      "close": 167.5,
-      "ma20": 141.0,
-      "volume": 2616,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 53303,
-      "trust_amount": 53303,
-      "sector": "半導體業",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
@@ -3561,51 +3075,6 @@
       "candidate_reason": "法人未連續買超"
     },
     {
-      "symbol": "8042.TWO",
-      "name": "金山電",
-      "close": 135.0,
-      "ma20": 91.49,
-      "volume": 792,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 322818,
-      "trust_amount": 322818,
-      "sector": "電子零組件業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "8086.TWO",
-      "name": "宏捷科",
-      "close": 163.0,
-      "ma20": 151.22,
-      "volume": 10064,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 435300,
-      "trust_amount": 435300,
-      "sector": "半導體業",
-      "pattern": "A",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "8091.TWO",
-      "name": "翔名",
-      "close": 273.5,
-      "ma20": 214.57,
-      "volume": 817,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 309870,
-      "trust_amount": 309870,
-      "sector": "半導體業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
       "symbol": "8096.TWO",
       "name": "擎亞",
       "close": 124.5,
@@ -3634,22 +3103,7 @@
       "sector": "電子零組件業",
       "pattern": "A",
       "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "8227.TWO",
-      "name": "巨有科技",
-      "close": 249.0,
-      "ma20": 195.22,
-      "volume": 1560,
-      "date": "2026-05-25",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 44860,
-      "trust_amount": 44860,
-      "sector": "半導體業",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
     }
   ],
-  "candidates_total": 132
+  "candidates_total": 104
 }
