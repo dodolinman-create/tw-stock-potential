@@ -101,34 +101,6 @@
       "pattern": "B"
     },
     {
-      "symbol": "3504.TW",
-      "name": "揚明光",
-      "close": 80.3,
-      "ma20": 71.38,
-      "volume": 2232,
-      "date": "2026-05-26",
-      "foreign_buy": true,
-      "trust_buy": false,
-      "foreign_amount": 228864,
-      "trust_amount": 0,
-      "sector": "光電業",
-      "pattern": "B"
-    },
-    {
-      "symbol": "3515.TW",
-      "name": "華擎",
-      "close": 245.0,
-      "ma20": 233.72,
-      "volume": 1066,
-      "date": "2026-05-26",
-      "foreign_buy": true,
-      "trust_buy": false,
-      "foreign_amount": 560760,
-      "trust_amount": -47000,
-      "sector": "電腦及週邊設備業",
-      "pattern": "A"
-    },
-    {
       "symbol": "3583.TW",
       "name": "辛耘",
       "close": 876.0,
@@ -228,21 +200,6 @@
       "foreign_amount": 9238994,
       "trust_amount": 670000,
       "sector": "",
-      "pattern": "A",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
-      "symbol": "2353.TW",
-      "name": "宏碁",
-      "close": 31.9,
-      "ma20": 28.4,
-      "volume": 120262,
-      "date": "2026-05-26",
-      "foreign_buy": true,
-      "trust_buy": false,
-      "foreign_amount": 25340797,
-      "trust_amount": -3203097,
-      "sector": "電腦及週邊設備業",
       "pattern": "A",
       "candidate_reason": "法人未連續買超"
     },
