@@ -6,7 +6,6 @@ from plotly.subplots import make_subplots
 import requests
 import json
 import time
-import os
 from io import StringIO
 from datetime import datetime, timedelta
 
@@ -444,15 +443,12 @@ def render_chart_grid(stock_list, stock_data, tab_prefix='main'):
             for s in selected_syms
         )
         filename = f"{datetime.now().strftime('%Y%m%d')}.txt"
-        os.makedirs('static', exist_ok=True)
-        with open(f'static/{filename}', 'w', encoding='utf-8') as f:
-            f.write(tv_content)
-        st.markdown(
-            f'<a href="/app/static/{filename}" download="{filename}" '
-            f'style="display:inline-block;padding:0.4rem 1.2rem;background:#FF4B4B;'
-            f'color:white!important;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.95rem;">'
-            f'⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）</a>',
-            unsafe_allow_html=True,
+        st.download_button(
+            label=f'⬇ 下載 {filename}（已選 {len(selected_syms)} 檔）',
+            data=tv_content.encode('utf-8'),
+            file_name=filename,
+            mime='text/plain',
+            key=f'dl_{tab_prefix}_{len(selected_syms)}',
         )
         st.code(tv_content, language=None)
 
