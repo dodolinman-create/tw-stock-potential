@@ -238,7 +238,7 @@
       "foreign_amount": 5942678,
       "trust_amount": 2409664,
       "sector": "電腦及週邊設備業",
-      "pattern": "B"
+      "pattern": "A"
     },
     {
       "symbol": "2376.TW",
@@ -266,7 +266,7 @@
       "foreign_amount": 1104164,
       "trust_amount": -431219,
       "sector": "電腦及週邊設備業",
-      "pattern": "B"
+      "pattern": "A"
     },
     {
       "symbol": "2379.TW",
@@ -546,7 +546,7 @@
       "foreign_amount": -24596710,
       "trust_amount": 42245305,
       "sector": "金融保險業",
-      "pattern": "B"
+      "pattern": "A"
     },
     {
       "symbol": "3010.TW",
@@ -1438,6 +1438,21 @@
       "candidate_reason": "法人未連續買超"
     },
     {
+      "symbol": "1590.TW",
+      "name": "亞德客-KY",
+      "close": 1400.0,
+      "ma20": 1454.5,
+      "volume": 1535,
+      "date": "2026-05-29",
+      "foreign_buy": true,
+      "trust_buy": false,
+      "foreign_amount": 146641,
+      "trust_amount": -70096,
+      "sector": "電機機械",
+      "pattern": "A",
+      "candidate_reason": "法人未連續買超"
+    },
+    {
       "symbol": "1773.TW",
       "name": "勝一",
       "close": 179.0,
@@ -2229,7 +2244,7 @@
       "foreign_amount": 78691,
       "trust_amount": -278000,
       "sector": "電機機械",
-      "pattern": "B",
+      "pattern": "A",
       "candidate_reason": "法人未連續買超"
     },
     {
@@ -2694,7 +2709,7 @@
       "foreign_amount": 2948853,
       "trust_amount": 0,
       "sector": "化學工業",
-      "pattern": "B",
+      "pattern": "A",
       "candidate_reason": "法人未連續買超"
     },
     {
@@ -2726,6 +2741,21 @@
       "sector": "化學工業",
       "pattern": "A",
       "candidate_reason": "法人未連續買超"
+    },
+    {
+      "symbol": "4764.TW",
+      "name": "雙鍵",
+      "close": 305.5,
+      "ma20": 318.57,
+      "volume": 4467,
+      "date": "2026-05-29",
+      "foreign_buy": false,
+      "trust_buy": true,
+      "foreign_amount": -1855941,
+      "trust_amount": 1138000,
+      "sector": "化學工業",
+      "pattern": "A",
+      "candidate_reason": "接近高點 83%"
     },
     {
       "symbol": "4906.TW",
