@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-03 17:47:33",
+  "last_updated": "2026-06-03 23:19:45",
   "total": 112,
   "results": [
     {
@@ -894,7 +894,7 @@
       "foreign_buy": false,
       "trust_buy": true,
       "foreign_amount": -222314916,
-      "trust_amount": 41041434,
+      "trust_amount": 23839221,
       "sector": "光電業",
       "pattern": "B"
     },
@@ -1566,7 +1566,7 @@
       "foreign_buy": true,
       "trust_buy": true,
       "foreign_amount": 2370215,
-      "trust_amount": 200000,
+      "trust_amount": 8000,
       "sector": "其他業",
       "pattern": "B"
     }
@@ -1648,21 +1648,6 @@
       "candidate_reason": "法人未連續買超"
     },
     {
-      "symbol": "1809.TW",
-      "name": "中釉",
-      "close": 56.2,
-      "ma20": 42.19,
-      "volume": 44262,
-      "date": "2026-06-03",
-      "foreign_buy": false,
-      "trust_buy": true,
-      "foreign_amount": -1650942,
-      "trust_amount": 3000,
-      "sector": "玻璃陶瓷",
-      "pattern": "B",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
       "symbol": "2049.TW",
       "name": "上銀",
       "close": 369.0,
@@ -1717,7 +1702,7 @@
       "foreign_buy": false,
       "trust_buy": true,
       "foreign_amount": -15974220,
-      "trust_amount": 15109146,
+      "trust_amount": 15052410,
       "sector": "橡膠工業",
       "pattern": "A",
       "candidate_reason": "法人未連續買超"
@@ -2998,21 +2983,6 @@
       "candidate_reason": "法人未連續買超"
     },
     {
-      "symbol": "6205.TW",
-      "name": "詮欣",
-      "close": 91.2,
-      "ma20": 81.8,
-      "volume": 13629,
-      "date": "2026-06-03",
-      "foreign_buy": false,
-      "trust_buy": true,
-      "foreign_amount": -16671,
-      "trust_amount": 16700,
-      "sector": "電子零組件業",
-      "pattern": "A",
-      "candidate_reason": "法人未連續買超"
-    },
-    {
       "symbol": "6206.TW",
       "name": "飛捷",
       "close": 141.5,
@@ -3358,5 +3328,5 @@
       "candidate_reason": "法人未連續買超"
     }
   ],
-  "candidates_total": 119
+  "candidates_total": 117
 }
