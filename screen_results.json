@@ -139,7 +139,7 @@
       "trust_buy": false,
       "foreign_amount": 1759197,
       "trust_amount": -1000,
-      "sector": "汽車工業",
+      "sector": "",
       "pattern": "B"
     },
     {
@@ -517,7 +517,7 @@
       "trust_buy": false,
       "foreign_amount": 360023,
       "trust_amount": 0,
-      "sector": "電子零組件業",
+      "sector": "",
       "pattern": "A"
     },
     {
@@ -783,7 +783,7 @@
       "trust_buy": true,
       "foreign_amount": 7716359,
       "trust_amount": 28000,
-      "sector": "光電業",
+      "sector": "",
       "pattern": "B"
     },
     {
@@ -1035,7 +1035,7 @@
       "trust_buy": false,
       "foreign_amount": 4287817,
       "trust_amount": 0,
-      "sector": "通信網路業",
+      "sector": "",
       "pattern": "B"
     },
     {
@@ -1413,7 +1413,7 @@
       "trust_buy": false,
       "foreign_amount": 1260000,
       "trust_amount": 0,
-      "sector": "電子零組件業",
+      "sector": "",
       "pattern": "B"
     },
     {
@@ -1613,7 +1613,7 @@
       "trust_buy": true,
       "foreign_amount": -867349,
       "trust_amount": 1050150,
-      "sector": "電子零組件業",
+      "sector": "",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
@@ -1703,7 +1703,7 @@
       "trust_buy": false,
       "foreign_amount": 556283,
       "trust_amount": 0,
-      "sector": "橡膠工業",
+      "sector": "",
       "pattern": "A",
       "candidate_reason": "法人未連續買超"
     },
@@ -1763,7 +1763,7 @@
       "trust_buy": true,
       "foreign_amount": 9705066,
       "trust_amount": 12000,
-      "sector": "半導體業",
+      "sector": "",
       "pattern": "A",
       "candidate_reason": "法人未連續買超"
     },
@@ -1808,7 +1808,7 @@
       "trust_buy": true,
       "foreign_amount": -3679868,
       "trust_amount": 8000,
-      "sector": "半導體業",
+      "sector": "",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
@@ -1838,7 +1838,7 @@
       "trust_buy": true,
       "foreign_amount": -269057,
       "trust_amount": 1000,
-      "sector": "半導體業",
+      "sector": "",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
@@ -1883,7 +1883,7 @@
       "trust_buy": false,
       "foreign_amount": 301999,
       "trust_amount": 0,
-      "sector": "電腦及週邊設備業",
+      "sector": "",
       "pattern": "A",
       "candidate_reason": "法人未連續買超"
     },
@@ -1913,7 +1913,7 @@
       "trust_buy": true,
       "foreign_amount": -774813,
       "trust_amount": 3000,
-      "sector": "半導體業",
+      "sector": "",
       "pattern": "A",
       "candidate_reason": "法人未連續買超"
     },
@@ -2018,7 +2018,7 @@
       "trust_buy": false,
       "foreign_amount": 665000,
       "trust_amount": 0,
-      "sector": "光電業",
+      "sector": "",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
@@ -2048,7 +2048,7 @@
       "trust_buy": true,
       "foreign_amount": 405927,
       "trust_amount": 7000,
-      "sector": "汽車工業",
+      "sector": "",
       "pattern": "A",
       "candidate_reason": "法人未連續買超"
     },
@@ -2318,7 +2318,7 @@
       "trust_buy": false,
       "foreign_amount": 388505,
       "trust_amount": 0,
-      "sector": "半導體業",
+      "sector": "",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
@@ -2363,7 +2363,7 @@
       "trust_buy": false,
       "foreign_amount": 206450,
       "trust_amount": 0,
-      "sector": "電子零組件業",
+      "sector": "",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
@@ -2468,7 +2468,7 @@
       "trust_buy": false,
       "foreign_amount": 250554,
       "trust_amount": 0,
-      "sector": "光電業",
+      "sector": "",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
@@ -2498,7 +2498,7 @@
       "trust_buy": false,
       "foreign_amount": 544677,
       "trust_amount": 0,
-      "sector": "電子零組件業",
+      "sector": "",
       "pattern": "A",
       "candidate_reason": "法人未連續買超"
     },
@@ -2603,7 +2603,7 @@
       "trust_buy": false,
       "foreign_amount": 907479,
       "trust_amount": 0,
-      "sector": "電機機械",
+      "sector": "",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
@@ -2648,7 +2648,7 @@
       "trust_buy": false,
       "foreign_amount": 1599043,
       "trust_amount": 0,
-      "sector": "化學工業",
+      "sector": "",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
@@ -2663,7 +2663,7 @@
       "trust_buy": false,
       "foreign_amount": 1929171,
       "trust_amount": -5000,
-      "sector": "通信網路業",
+      "sector": "",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
@@ -2678,7 +2678,7 @@
       "trust_buy": false,
       "foreign_amount": 749071,
       "trust_amount": 0,
-      "sector": "電腦及週邊設備業",
+      "sector": "",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
@@ -2933,7 +2933,7 @@
       "trust_buy": false,
       "foreign_amount": 1008014,
       "trust_amount": 0,
-      "sector": "電子零組件業",
+      "sector": "",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
@@ -2948,7 +2948,7 @@
       "trust_buy": false,
       "foreign_amount": 661110,
       "trust_amount": 0,
-      "sector": "電腦及週邊設備業",
+      "sector": "",
       "pattern": "B",
       "candidate_reason": "法人未連續買超"
     },
