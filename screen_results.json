@@ -129,20 +129,6 @@
       "pattern": "B"
     },
     {
-      "symbol": "8454.TW",
-      "name": "富邦媒",
-      "close": 426.5,
-      "ma20": 241.9,
-      "volume": 3482,
-      "date": "2026-06-09",
-      "foreign_buy": false,
-      "trust_buy": true,
-      "foreign_amount": -2448648,
-      "trust_amount": 6323762,
-      "sector": "數位雲端",
-      "pattern": "B"
-    },
-    {
       "symbol": "8926.TW",
       "name": "台汽電",
       "close": 75.0,
