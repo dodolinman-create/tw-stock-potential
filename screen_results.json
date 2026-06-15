@@ -225,34 +225,6 @@
       "trust_amount": -1470000,
       "sector": "半導體業",
       "pattern": "B"
-    },
-    {
-      "symbol": "9933.TW",
-      "name": "中鼎",
-      "close": 40.95,
-      "ma20": 40.12,
-      "volume": 3824,
-      "date": "2026-06-12",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 4145202,
-      "trust_amount": 286400,
-      "sector": "其他業",
-      "pattern": "A"
-    },
-    {
-      "symbol": "9939.TW",
-      "name": "宏全",
-      "close": 133.5,
-      "ma20": 125.88,
-      "volume": 1544,
-      "date": "2026-06-12",
-      "foreign_buy": true,
-      "trust_buy": false,
-      "foreign_amount": 1912041,
-      "trust_amount": -42271,
-      "sector": "其他業",
-      "pattern": "A"
     }
   ],
   "candidates": [
