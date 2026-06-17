@@ -45,6 +45,20 @@
       "pattern": "A"
     },
     {
+      "symbol": "5009.TWO",
+      "name": "榮剛",
+      "close": 34.5,
+      "ma20": 35.97,
+      "volume": 6772,
+      "date": "2026-06-16",
+      "foreign_buy": true,
+      "trust_buy": true,
+      "foreign_amount": 3139526,
+      "trust_amount": 3139526,
+      "sector": "鋼鐵工業",
+      "pattern": "A"
+    },
+    {
       "symbol": "5285.TW",
       "name": "界霖",
       "close": 90.0,
