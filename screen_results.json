@@ -31,48 +31,6 @@
       "pattern": "B"
     },
     {
-      "symbol": "2377.TW",
-      "name": "微星",
-      "close": 137.0,
-      "ma20": 135.75,
-      "volume": 12988,
-      "date": "2026-06-22",
-      "foreign_buy": false,
-      "trust_buy": true,
-      "foreign_amount": -1237484,
-      "trust_amount": 2129745,
-      "sector": "電腦及週邊設備業",
-      "pattern": "A"
-    },
-    {
-      "symbol": "2379.TW",
-      "name": "瑞昱",
-      "close": 900.0,
-      "ma20": 653.4,
-      "volume": 7329,
-      "date": "2026-06-22",
-      "foreign_buy": true,
-      "trust_buy": true,
-      "foreign_amount": 3940921,
-      "trust_amount": 522589,
-      "sector": "半導體業",
-      "pattern": "B"
-    },
-    {
-      "symbol": "2382.TW",
-      "name": "廣達",
-      "close": 380.0,
-      "ma20": 365.68,
-      "volume": 19190,
-      "date": "2026-06-22",
-      "foreign_buy": false,
-      "trust_buy": true,
-      "foreign_amount": -1283743,
-      "trust_amount": 3782096,
-      "sector": "電腦及週邊設備業",
-      "pattern": "A"
-    },
-    {
       "symbol": "2383.TW",
       "name": "台光電",
       "close": 5700.0,
