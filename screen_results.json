@@ -193,6 +193,36 @@
       "sector": "其他業",
       "pattern": "A",
       "candidate_reason": "法人未連續買超"
+    },
+    {
+      "symbol": "9933.TW",
+      "name": "中鼎",
+      "close": 41.1,
+      "ma20": 42.0,
+      "volume": 2392,
+      "date": "2026-07-09",
+      "foreign_buy": true,
+      "trust_buy": false,
+      "foreign_amount": 467105,
+      "trust_amount": -49000,
+      "sector": "其他業",
+      "pattern": "A",
+      "candidate_reason": "法人未連續買超"
+    },
+    {
+      "symbol": "9941.TW",
+      "name": "裕融",
+      "close": 81.0,
+      "ma20": 81.66,
+      "volume": 838,
+      "date": "2026-07-09",
+      "foreign_buy": true,
+      "trust_buy": false,
+      "foreign_amount": 1478707,
+      "trust_amount": -42871,
+      "sector": "其他業",
+      "pattern": "A",
+      "candidate_reason": "法人未連續買超"
     }
   ],
   "candidates_total": 8,
