@@ -31,6 +31,20 @@
       "pattern": "A"
     },
     {
+      "symbol": "3231.TW",
+      "name": "緯創",
+      "close": 160.0,
+      "ma20": 154.71,
+      "volume": 82444,
+      "date": "2026-07-30",
+      "foreign_buy": true,
+      "trust_buy": true,
+      "foreign_amount": 120946904,
+      "trust_amount": 21282839,
+      "sector": "電腦及週邊設備業",
+      "pattern": "B"
+    },
+    {
       "symbol": "4904.TW",
       "name": "遠傳",
       "close": 105.0,
