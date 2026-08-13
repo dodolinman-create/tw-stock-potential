@@ -101,6 +101,20 @@
       "pattern": "A"
     },
     {
+      "symbol": "6179.TWO",
+      "name": "亞通",
+      "close": 27.35,
+      "ma20": 25.47,
+      "volume": 932,
+      "date": "2026-08-12",
+      "foreign_buy": true,
+      "trust_buy": true,
+      "foreign_amount": 1959780,
+      "trust_amount": 1959780,
+      "sector": "其他業",
+      "pattern": "A"
+    },
+    {
       "symbol": "6446.TW",
       "name": "藥華藥",
       "close": 1445.0,
