@@ -85,7 +85,9 @@
       "trust_amount": -3000,
       "sector": "運動休閒",
       "pattern": "B"
-    },
+    }
+  ],
+  "candidates": [
     {
       "symbol": "2108.TW",
       "name": "南帝",
