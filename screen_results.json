@@ -141,6 +141,20 @@
       "trust_amount": 2949477,
       "sector": "電子零組件業",
       "pattern": "B"
+    },
+    {
+      "symbol": "9945.TW",
+      "name": "潤泰新",
+      "close": 29.3,
+      "ma20": 28.76,
+      "volume": 3513,
+      "date": "2026-10-07",
+      "foreign_buy": false,
+      "trust_buy": true,
+      "foreign_amount": -1820151,
+      "trust_amount": 2936000,
+      "sector": "其他業",
+      "pattern": "A"
     }
   ],
   "candidates": [
