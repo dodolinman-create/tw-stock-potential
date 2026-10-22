@@ -115,6 +115,48 @@
       "pattern": "A"
     },
     {
+      "symbol": "4904.TW",
+      "name": "遠傳",
+      "close": 112.0,
+      "ma20": 107.38,
+      "volume": 6380,
+      "date": "2026-10-21",
+      "foreign_buy": true,
+      "trust_buy": true,
+      "foreign_amount": 3653641,
+      "trust_amount": 4385115,
+      "sector": "通信網路業",
+      "pattern": "A"
+    },
+    {
+      "symbol": "4938.TW",
+      "name": "和碩",
+      "close": 105.0,
+      "ma20": 94.75,
+      "volume": 29485,
+      "date": "2026-10-21",
+      "foreign_buy": true,
+      "trust_buy": false,
+      "foreign_amount": 22876752,
+      "trust_amount": -7284735,
+      "sector": "電腦及週邊設備業",
+      "pattern": "B"
+    },
+    {
+      "symbol": "4961.TW",
+      "name": "天鈺",
+      "close": 188.0,
+      "ma20": 182.8,
+      "volume": 1038,
+      "date": "2026-10-21",
+      "foreign_buy": true,
+      "trust_buy": true,
+      "foreign_amount": 915664,
+      "trust_amount": 836000,
+      "sector": "半導體業",
+      "pattern": "A"
+    },
+    {
       "symbol": "5876.TW",
       "name": "上海商銀",
       "close": 54.6,
