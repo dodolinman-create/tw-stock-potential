@@ -129,6 +129,34 @@
       "pattern": "A"
     },
     {
+      "symbol": "3443.TW",
+      "name": "創意",
+      "close": 7585.0,
+      "ma20": 8079.75,
+      "volume": 1507,
+      "date": "2026-10-22",
+      "foreign_buy": true,
+      "trust_buy": true,
+      "foreign_amount": 172001,
+      "trust_amount": 567715,
+      "sector": "半導體業",
+      "pattern": "A"
+    },
+    {
+      "symbol": "3605.TW",
+      "name": "宏致",
+      "close": 171.5,
+      "ma20": 174.4,
+      "volume": 8200,
+      "date": "2026-10-22",
+      "foreign_buy": true,
+      "trust_buy": true,
+      "foreign_amount": 664840,
+      "trust_amount": 2321000,
+      "sector": "電子零組件業",
+      "pattern": "A"
+    },
+    {
       "symbol": "3702.TW",
       "name": "大聯大",
       "close": 114.5,
@@ -197,6 +225,76 @@
       "trust_amount": 1283982,
       "sector": "電機機械",
       "pattern": "A"
+    },
+    {
+      "symbol": "6672.TW",
+      "name": "騰輝電子-KY",
+      "close": 581.0,
+      "ma20": 484.8,
+      "volume": 13638,
+      "date": "2026-10-22",
+      "foreign_buy": true,
+      "trust_buy": true,
+      "foreign_amount": 88779,
+      "trust_amount": 497000,
+      "sector": "電子零組件業",
+      "pattern": "B"
+    },
+    {
+      "symbol": "8996.TW",
+      "name": "高力",
+      "close": 1560.0,
+      "ma20": 1602.0,
+      "volume": 5705,
+      "date": "2026-10-22",
+      "foreign_buy": true,
+      "trust_buy": true,
+      "foreign_amount": 505094,
+      "trust_amount": 929982,
+      "sector": "電機機械",
+      "pattern": "A"
+    },
+    {
+      "symbol": "9904.TW",
+      "name": "寶成",
+      "close": 26.35,
+      "ma20": 25.44,
+      "volume": 11359,
+      "date": "2026-10-22",
+      "foreign_buy": true,
+      "trust_buy": false,
+      "foreign_amount": 32969542,
+      "trust_amount": -627875,
+      "sector": "運動休閒",
+      "pattern": "A"
+    },
+    {
+      "symbol": "9933.TW",
+      "name": "中鼎",
+      "close": 44.65,
+      "ma20": 42.85,
+      "volume": 8251,
+      "date": "2026-10-22",
+      "foreign_buy": true,
+      "trust_buy": true,
+      "foreign_amount": 6383531,
+      "trust_amount": 284138,
+      "sector": "其他業",
+      "pattern": "A"
+    },
+    {
+      "symbol": "9945.TW",
+      "name": "潤泰新",
+      "close": 29.6,
+      "ma20": 29.38,
+      "volume": 4416,
+      "date": "2026-10-22",
+      "foreign_buy": true,
+      "trust_buy": true,
+      "foreign_amount": 7001693,
+      "trust_amount": 1655710,
+      "sector": "其他業",
+      "pattern": "A"
     }
   ],
   "candidates": [
@@ -242,6 +340,21 @@
       "foreign_amount": 220000,
       "trust_amount": 0,
       "sector": "汽車工業",
+      "pattern": "A",
+      "candidate_reason": "法人未連續買超"
+    },
+    {
+      "symbol": "2419.TW",
+      "name": "仲琦",
+      "close": 27.4,
+      "ma20": 28.03,
+      "volume": 772,
+      "date": "2026-10-22",
+      "foreign_buy": true,
+      "trust_buy": false,
+      "foreign_amount": 1468663,
+      "trust_amount": 0,
+      "sector": "通信網路業",
       "pattern": "A",
       "candidate_reason": "法人未連續買超"
     },
@@ -575,7 +688,5 @@
       "new_high": true
     }
   ],
-  "breakout_total": 2,
-  "n_bottom": [],
-  "n_bottom_total": 0
+  "candidates_total": 47
 }
