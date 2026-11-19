@@ -15,6 +15,48 @@
       "trust_amount": 6476310,
       "sector": "金融保險業",
       "pattern": "A"
+    },
+    {
+      "symbol": "6199.TWO",
+      "name": "天品",
+      "close": 170.0,
+      "ma20": 161.1,
+      "volume": 9541,
+      "date": "2026-11-17",
+      "foreign_buy": true,
+      "trust_buy": true,
+      "foreign_amount": 1641823,
+      "trust_amount": 1641823,
+      "sector": "其他業",
+      "pattern": "B"
+    },
+    {
+      "symbol": "9904.TW",
+      "name": "寶成",
+      "close": 26.3,
+      "ma20": 25.98,
+      "volume": 25648,
+      "date": "2026-11-17",
+      "foreign_buy": true,
+      "trust_buy": false,
+      "foreign_amount": 31367048,
+      "trust_amount": -5876000,
+      "sector": "運動休閒",
+      "pattern": "A"
+    },
+    {
+      "symbol": "9933.TW",
+      "name": "中鼎",
+      "close": 56.6,
+      "ma20": 47.39,
+      "volume": 53217,
+      "date": "2026-11-17",
+      "foreign_buy": true,
+      "trust_buy": false,
+      "foreign_amount": 46325662,
+      "trust_amount": -642700,
+      "sector": "其他業",
+      "pattern": "B"
     }
   ],
   "candidates": [],
